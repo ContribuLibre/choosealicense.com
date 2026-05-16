@@ -366,6 +366,8 @@ strong {
   -o-border-radius: 3px;
   border-radius: 3px;
   padding: 20px;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
 }
 
 .license-nickname {
