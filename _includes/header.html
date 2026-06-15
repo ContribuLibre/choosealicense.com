@@ -13,11 +13,16 @@
       stops polyglot from re-prefixing the URLs we build explicitly here, and also
       feeds the JavaScript language suggestion (assets/js/i18n.js).
     {% endcomment %}
+    {% comment %}
+      href is placed before hreflang on purpose: polyglot's URL corrector skips a
+      link matching `hreflang="<default_lang>" href=…`, so the default language's
+      alternate would keep static_href's placeholder if the order were reversed.
+    {% endcomment %}
     {% for lang in site.languages %}
       {% if lang == site.default_lang %}{% capture alt_href %}{{ site.url }}{{ site.baseurl }}{{ page.url }}{% endcapture %}{% else %}{% capture alt_href %}{{ site.url }}{{ site.baseurl }}/{{ lang }}{{ page.url }}{% endcapture %}{% endif %}
-      <link rel="alternate" hreflang="{{ lang }}" {% static_href %}href="{{ alt_href }}"{% endstatic_href %}>
+      <link rel="alternate" {% static_href %}href="{{ alt_href }}"{% endstatic_href %} hreflang="{{ lang }}">
     {% endfor %}
-    <link rel="alternate" hreflang="x-default" {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ page.url }}"{% endstatic_href %}>
+    <link rel="alternate" {% static_href %}href="{{ site.url }}{{ site.baseurl }}{{ page.url }}"{% endstatic_href %} hreflang="x-default">
 
     {% seo %}
   </head>

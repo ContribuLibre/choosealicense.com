@@ -55,7 +55,7 @@ in English.
 
 * `ui.yml` keys are flat. Keys ending in `_html` contain raw HTML; everything else
   is Markdown. Keep links and anchors (e.g. `#for-users`) intact.
-* Placeholders like `%{title}`, `%{projects}`, `%{license}`, `%{language}` are
+* Placeholders like `%title%`, `%projects%`, `%license%`, `%language%` are
   filled in by the site — keep them.
 * `licenses.yml` is keyed by the lowercased SPDX id (e.g. `mit`, `gpl-3.0`).
 * `rules.yml` mirrors `_data/rules.yml`: `<group>` → `<tag>` → `{ label, description }`.

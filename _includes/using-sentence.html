@@ -15,6 +15,6 @@
     {%- assign loc = site.data.i18n[i18n_lang].licenses[spdx_key] -%}
     {%- assign lic_name = loc.nickname | default: license.nickname | default: license.title -%}
     {%- if using.size == 1 -%}{%- capture sentence -%}{% include t.html key="using_sentence_singular" %}{%- endcapture -%}{%- else -%}{%- capture sentence -%}{% include t.html key="using_sentence_plural" %}{%- endcapture -%}{%- endif -%}
-    {{ sentence | replace: '%{projects}', projects | replace: '%{license}', lic_name | strip }}
+    {{ sentence | replace: '%projects%', projects | replace: '%license%', lic_name | strip }}
   {%- endif -%}
 {%- endfor -%}

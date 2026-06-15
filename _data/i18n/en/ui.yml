@@ -42,12 +42,12 @@ sidebar_source: "Source"
 sidebar_using_heading: "Who’s using this license?"
 
 # --- License overview cards (/licenses/) ------------------------------------
-overview_view_full: "View full %{title} »"
+overview_view_full: "View full %title% »"
 
 # --- "Who uses it" sentence (home page) -------------------------------------
 using_and: "and"
-using_sentence_plural: "%{projects} use the %{license}."
-using_sentence_singular: "%{projects} uses the %{license}."
+using_sentence_plural: "%projects% use the %license%."
+using_sentence_singular: "%projects% uses the %license%."
 
 # --- Page titles (rendered as <h1> and used in <title>/breadcrumbs) ----------
 page_title_home: "Choose an open source license"
@@ -193,7 +193,7 @@ notfound_p2: |-
   If you were trying to see a license, go to [licenses](/licenses).
 
 # --- JavaScript language-suggestion banner (assets/js/i18n.js) --------------
-# %{language} is replaced with the suggested language's name.
-banner_suggest: "This page is also available in %{language}."
-banner_switch: "View in %{language}"
+# %language% is replaced with the suggested language's name.
+banner_suggest: "This page is also available in %language%."
+banner_switch: "View in %language%"
 banner_dismiss: "Dismiss"

@@ -94,8 +94,8 @@
   function showBanner(lang, path) {
     var strings = cfg.languages[lang] || {};
     var name = strings.name || lang;
-    var suggest = (strings.suggest || '').replace('%{language}', name);
-    var switchText = (strings.switch || '').replace('%{language}', name);
+    var suggest = (strings.suggest || '').replace('%language%', name);
+    var switchText = (strings.switch || '').replace('%language%', name);
     var dismissText = strings.dismiss || '×';
 
     var bar = document.createElement('div');

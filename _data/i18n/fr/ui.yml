@@ -39,12 +39,12 @@ sidebar_source: "Source"
 sidebar_using_heading: "Qui utilise cette licence ?"
 
 # --- Cartes de présentation des licences (/licenses/) -----------------------
-overview_view_full: "Voir le texte complet de %{title} »"
+overview_view_full: "Voir le texte complet de %title% »"
 
 # --- Phrase « qui l'utilise » (page d'accueil) ------------------------------
 using_and: "et"
-using_sentence_plural: "%{projects} utilisent %{license}."
-using_sentence_singular: "%{projects} utilise %{license}."
+using_sentence_plural: "%projects% utilisent %license%."
+using_sentence_singular: "%projects% utilise %license%."
 
 # --- Titres de pages ---------------------------------------------------------
 page_title_home: "Choisir une licence open source"
@@ -190,7 +190,7 @@ notfound_p2: |-
   Si vous vouliez consulter une licence, rendez-vous sur les [licences](/licenses).
 
 # --- Bandeau JavaScript de suggestion de langue (assets/js/i18n.js) ----------
-# %{language} est remplacé par le nom de la langue suggérée.
-banner_suggest: "Cette page est aussi disponible en %{language}."
-banner_switch: "Voir en %{language}"
+# %language% est remplacé par le nom de la langue suggérée.
+banner_suggest: "Cette page est aussi disponible en %language%."
+banner_switch: "Voir en %language%"
 banner_dismiss: "Ignorer"
