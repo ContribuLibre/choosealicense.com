@@ -78,3 +78,23 @@ Add separate components for `rules.yml` (base `_data/rules.yml` is a different
 shape, so use a `<lang>/rules.yml` mask with English context) and, for tier-2
 contributors, `licenses.yml`. Weblate then opens pull requests against this
 repository; maintainers just review and merge — no extra build steps.
+
+## Notes for template authors (polyglot gotchas)
+
+If you edit the templates that build the multilingual links, two non-obvious
+[polyglot](https://github.com/untra/polyglot) behaviours can bite — both are
+already handled in the codebase, so just don't undo them:
+
+* **Placeholders use `%name%`, not `%{name}`.** They're substituted with Liquid's
+  `replace` filter (e.g. `{{ s | replace: '%title%', license.title }}`). A `}` in a
+  `replace` argument is read as the end of the `{{ … }}` tag and breaks the build, so
+  the brace-free `%name%` form is used everywhere (UI strings, `replace` calls, JS).
+* **In `hreflang` `<link>` tags, write `href` before `hreflang`.** Polyglot rewrites
+  internal URLs per language but deliberately skips any link matching
+  `hreflang="<default_lang>" href=…`. With the reverse order the default language's
+  alternate would ship polyglot's internal `ferh=` placeholder instead of `href=`.
+  See the comment in [`_includes/header.html`](_includes/header.html).
+
+Also note: polyglot is not a GitHub Pages plugin, so its tags (e.g. `static_href`)
+only resolve when the site is built outside Pages' safe mode — i.e. via the Actions
+workflow or a local `jekyll serve`/`build`, never the native Pages build.
