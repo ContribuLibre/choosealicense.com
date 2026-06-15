@@ -1,0 +1,69 @@
+name: Deploy site to GitHub Pages
+
+# The site uses jekyll-polyglot for internationalization, which is not on the
+# GitHub Pages plugin whitelist. The native Pages build runs Jekyll in safe mode
+# and would silently ignore the plugin, so we build the site ourselves here (safe
+# mode off → polyglot runs) and publish the result with the Pages deploy actions.
+#
+# One-time setup by a maintainer: Settings → Pages → Build and deployment →
+# Source → "GitHub Actions".
+
+on:
+  push:
+    branches: [gh-pages]
+  workflow_dispatch:
+
+# Allow this workflow to publish to GitHub Pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment; don't cancel an in-progress production deploy.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        # Pinned SHA kept in sync with .github/workflows/test.yml (actions/checkout v4).
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          submodules: true
+
+      - name: Set up Ruby
+        # Pinned SHA kept in sync with .github/workflows/test.yml (ruby/setup-ruby).
+        uses: ruby/setup-ruby@4a9ddd6f338a97768b8006bf671dfbad383215f4
+        with:
+          ruby-version: 3.3.4
+          bundler-cache: true
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build with Jekyll
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+          # Lets jekyll-github-metadata resolve repository data non-interactively.
+          PAGES_REPO_NWO: ${{ github.repository }}
+          JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -2,17 +2,20 @@
 layout: default
 permalink: /appendix/
 title: Appendix
+title_key: page_title_appendix
 class: license-types
 ---
 
-For reference, here is a table of every license described in the [choosealicense.com repository](https://github.com/github/choosealicense.com).
+{% include t.html key="appendix_intro_p1" %}
 
-If you're here to choose a license, **[start from the home page](/)** to see a few licenses that will work for most cases.
+{% include t.html key="appendix_intro_p2" %}
 
+{% assign i18n_lang = site.active_lang | default: site.default_lang %}
+{% assign loc_rules = site.data.i18n[i18n_lang].rules %}
 <table border style="font-size: xx-small; position: relative">
 {% assign types = "permissions|conditions|limitations" | split: "|" %}
 <tr style="position: sticky; top: 0; z-index: 1000001; background: color-mix(in srgb, var(--backgroundColor) 70%, transparent);">
-  <th scope="col" style="text-align: center">License</th>
+  <th scope="col" style="text-align: center">{% include t.html key="appendix_col_license" %}</th>
   {% assign seen_tags = '' %}
   {% for type in types %}
     {% assign rules = site.data.rules[type] | sort: "label" %}
@@ -21,7 +24,8 @@ If you're here to choose a license, **[start from the home page](/)** to see a f
         {% continue %}
       {% endif %}
       {% capture seen_tags %}{{ seen_tags | append:rule_obj.tag }}{% endcapture %}
-      <th scope="col" style="text-align: center; width:7%"><a href="#{{ rule_obj.tag }}">{{ rule_obj.label }}</a></th>
+      {% assign lrule = loc_rules[type][rule_obj.tag] %}
+      <th scope="col" style="text-align: center; width:7%"><a href="#{{ rule_obj.tag }}">{{ lrule.label | default: rule_obj.label }}</a></th>
     {% endfor %}
   {% endfor %}
 </tr>
@@ -64,21 +68,22 @@ If you're here to choose a license, **[start from the home page](/)** to see a f
 {% endfor %}
 </table>
 
-## Legend
+## {% include t.html key="appendix_legend_heading" %}
 
-<p>Open source licenses grant to the public <span class="license-permissions"><span class="license-marker">✓</span></span> <b>permissions</b> to do things with licensed works which copyright or other "intellectual property" laws might otherwise disallow.</p>
+<p>{% include t.html key="appendix_legend_permissions_html" %}</p>
 
-<p>Most open source licenses' grants of permissions are subject to compliance with <span class="license-conditions"><span class="license-marker">ⓘ</span></span> <b>conditions</b>.</p>
+<p>{% include t.html key="appendix_legend_conditions_html" %}</p>
 
-<p>Most open source licenses also have <span class="license-limitations"><span class="license-marker">✕</span></span> <b>limitations</b> that usually disclaim warranty and liability, and sometimes expressly exclude patents or trademarks from licenses' grants.</p>
+<p>{% include t.html key="appendix_legend_limitations_html" %}</p>
 
 {% for type in types %}
-### {% if type == "permissions" %}Permissions{% elsif type == "conditions" %}Conditions{% else %}Limitations{% endif %}
+### {% if type == "permissions" %}{% include t.html key="rules_permissions" %}{% elsif type == "conditions" %}{% include t.html key="rules_conditions" %}{% else %}{% include t.html key="rules_limitations" %}{% endif %}
   <dl>
   {% assign rules = site.data.rules[type] | sort: "label" %}
   {% for rule_obj in rules %}
     {% assign req = rule_obj.tag %}
-    <dt id="{{ req }}">{{ rule_obj.label }}</dt>
+    {% assign lrule = loc_rules[type][req] %}
+    <dt id="{{ req }}">{{ lrule.label | default: rule_obj.label }}</dt>
     <dd class="license-{{ type }}">
       {% if req contains "--" %}
         {% assign lite = " lite" %}
@@ -88,7 +93,7 @@ If you're here to choose a license, **[start from the home page](/)** to see a f
       <span class="{{ lite | strip }}">
         <span class="license-marker {{ req }}">{% if type == "permissions" %}✓{% elsif type == "conditions" %}ⓘ{% else %}✕{% endif %}</span>
       </span>
-      {{ rule_obj.description }}
+      {{ lrule.description | default: rule_obj.description }}
     </dd>
   {% endfor %}
   </dl>

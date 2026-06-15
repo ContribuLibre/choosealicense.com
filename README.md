@@ -12,6 +12,18 @@ We catalog [select](CONTRIBUTING.md#adding-a-license) open source licenses with 
 * Collaborate with and reinforce other licensing best practices and standards projects.
 * Not comprehensive. Seems like an odd goal, but there are a bajillion licenses out there. We're going to have to filter that down to a small list of those that matter.
 
+## Translations
+
+The site is available in multiple languages: the default language is served at the
+root and each other language under its own prefix (e.g. `/fr/`), generated from the
+same source files via [jekyll-polyglot](https://github.com/untra/polyglot). Because
+polyglot isn't a GitHub Pages plugin, the site is built and deployed from GitHub
+Actions (see [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)).
+
+The interface and the non-legal license *summaries* are translatable; the **legal
+text of each license is never translated**. See [TRANSLATING.md](TRANSLATING.md) to
+add or update a translation (it's plain YAML, ready for Weblate).
+
 ## Run it on your machine
 
 ### Managing Dependencies

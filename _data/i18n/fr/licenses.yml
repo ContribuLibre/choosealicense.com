@@ -1,0 +1,67 @@
+# Synthèses françaises des licences (valeur NON juridique). Clé = identifiant SPDX
+# en minuscules. Seuls les champs descriptifs sont traduits ; chaque champ absent
+# retombe sur le front matter anglais du fichier _licenses/<id>.txt, et le TEXTE
+# JURIDIQUE de la licence n'est jamais traduit.
+#
+# Cette démo couvre les licences du « spectre » de la page /licenses/. Les autres
+# licences afficheront leur synthèse anglaise jusqu'à ce qu'elles soient traduites.
+
+mit:
+  description: |-
+    Une licence permissive courte et simple, dont les seules conditions imposent de conserver les mentions de droit d’auteur et de licence. Les œuvres sous licence, leurs modifications et les œuvres plus larges peuvent être distribuées sous des conditions différentes et sans code source.
+  how: |-
+    Créez un fichier texte (généralement nommé LICENSE ou LICENSE.txt) à la racine de votre code source et copiez-y le texte de la licence. Remplacez [year] par l’année en cours et [fullname] par le nom (ou les noms) des titulaires du droit d’auteur.
+
+apache-2.0:
+  description: |-
+    Une licence permissive dont les principales conditions imposent de conserver les mentions de droit d’auteur et de licence. Les contributeurs accordent expressément des droits de brevet. Les œuvres sous licence, leurs modifications et les œuvres plus larges peuvent être distribuées sous des conditions différentes et sans code source.
+  how: |-
+    Créez un fichier texte (généralement nommé LICENSE ou LICENSE.txt) à la racine de votre code source et copiez-y le texte de la licence.
+  note: |-
+    L’Apache Software Foundation <a href="https://apache.org/foundation/license-faq.html#Apply-My-Software">recommande</a> d’ajouter en outre une mention type dans l’en-tête de chaque fichier source. Vous la trouverez dans l’annexe, tout à la fin du texte de la licence.
+
+gpl-3.0:
+  description: |-
+    Les permissions de cette licence copyleft forte sont conditionnées à la mise à disposition du code source complet des œuvres sous licence et de leurs modifications — y compris les œuvres plus larges utilisant une œuvre sous licence — sous la même licence. Les mentions de droit d’auteur et de licence doivent être conservées. Les contributeurs accordent expressément des droits de brevet.
+  how: |-
+    Créez un fichier texte (généralement nommé COPYING, selon les conventions GNU) à la racine de votre code source et copiez-y le texte de la licence.
+  note: |-
+    La Free Software Foundation recommande d’ajouter en outre une mention type en haut de chaque fichier. Cette mention figure à la fin de la licence.
+
+agpl-3.0:
+  description: |-
+    Les permissions de cette licence copyleft, la plus forte, sont conditionnées à la mise à disposition du code source complet des œuvres sous licence et de leurs modifications — y compris les œuvres plus larges utilisant une œuvre sous licence — sous la même licence. Les mentions de droit d’auteur et de licence doivent être conservées. Les contributeurs accordent expressément des droits de brevet. Lorsqu’une version modifiée est utilisée pour fournir un service sur un réseau, le code source complet de cette version modifiée doit être rendu disponible.
+  how: |-
+    Créez un fichier texte (généralement nommé LICENSE ou LICENSE.txt) à la racine de votre code source et copiez-y le texte de la licence.
+  note: |-
+    La Free Software Foundation recommande d’ajouter en outre une mention type en haut de chaque fichier. Cette mention figure à la fin de la licence.
+
+lgpl-3.0:
+  description: |-
+    Les permissions de cette licence copyleft sont conditionnées à la mise à disposition du code source complet des œuvres sous licence et de leurs modifications sous la même licence ou sous la GNU GPLv3. Les mentions de droit d’auteur et de licence doivent être conservées. Les contributeurs accordent expressément des droits de brevet. Toutefois, une œuvre plus large utilisant l’œuvre sous licence via les interfaces fournies par celle-ci peut être distribuée sous des conditions différentes et sans le code source de l’œuvre plus large.
+  how: |-
+    Cette licence est un ensemble de permissions supplémentaires à la licence <a href="/licenses/gpl-3.0">GNU GPLv3</a>. Suivez les instructions pour appliquer la GNU GPLv3 à la racine de votre code source. Ajoutez ensuite un autre fichier nommé COPYING.LESSER et copiez-y le texte.
+  note: |-
+    La Free Software Foundation recommande d’ajouter en outre une mention type en haut de chaque fichier. Cette mention figure à la fin de la <a href="/licenses/gpl-3.0">licence GNU GPLv3</a>. Insérez le mot « Lesser » avant « General » aux trois endroits de la mention type pour bien faire référence à la GNU LGPLv3 et non à la GNU GPLv3.
+
+mpl-2.0:
+  description: |-
+    Les permissions de cette licence copyleft faible sont conditionnées à la mise à disposition du code source des fichiers sous licence et de leurs modifications sous la même licence (ou, dans certains cas, l’une des licences GNU). Les mentions de droit d’auteur et de licence doivent être conservées. Les contributeurs accordent expressément des droits de brevet. Toutefois, une œuvre plus large utilisant l’œuvre sous licence peut être distribuée sous des conditions différentes et sans le code source des fichiers ajoutés dans l’œuvre plus large.
+  how: |-
+    Créez un fichier texte (généralement nommé LICENSE ou LICENSE.txt) à la racine de votre code source et copiez-y le texte de la licence.
+  note: |-
+    La Mozilla Foundation recommande d’ajouter en outre une mention type en haut de chaque fichier. Cette mention figure à la fin de la licence (« Exhibit A »).
+
+bsl-1.0:
+  description: |-
+    Une licence permissive simple, n’imposant que la conservation des mentions de droit d’auteur et de licence pour la distribution sous forme de code source (et non sous forme binaire). Les œuvres sous licence, leurs modifications et les œuvres plus larges peuvent être distribuées sous des conditions différentes et sans code source.
+  how: |-
+    Créez un fichier texte (généralement nommé LICENSE ou LICENSE.txt) à la racine de votre code source et copiez-y le texte de la licence.
+  note: |-
+    Boost recommande d’ajouter en outre une mention type en haut de chaque fichier. Cette mention figure dans la <a href="https://www.boost.org/users/license.html#FAQ">FAQ de la Boost Software License</a>.
+
+unlicense:
+  description: |-
+    Une licence sans aucune condition, qui verse les œuvres dans le domaine public. Les œuvres ainsi libérées, leurs modifications et les œuvres plus larges peuvent être distribuées sous des conditions différentes et sans code source.
+  how: |-
+    Créez un fichier texte (généralement nommé UNLICENSE ou UNLICENSE.txt) à la racine de votre code source et copiez-y le texte de la déclaration de licence.

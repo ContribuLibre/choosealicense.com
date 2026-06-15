@@ -34,6 +34,17 @@ If your proposed license meets the above criteria, here's a few other things to 
 * The text of the license should match the corresponding text found in [spdx/license-list-data](https://github.com/spdx/license-list-data/blob/master/text/). If there are errors there, please fix them in [spdx/license-list-XML](https://github.com/spdx/license-list-XML) (from which the plain text version is generated) so as to minimize license text variation and make it easier for choosealicense.com to eventually consume license texts directly from SPDX.
 * The body of the file should be the text of the license in plain text.
 
+## Translating the site
+
+The site's interface and the human-readable *summaries* of licenses can be
+translated into any number of languages; see [TRANSLATING.md](TRANSLATING.md) for
+how it works and how to add a language. Two things to keep in mind:
+
+* The **legal text of a license is never translated** — only its non-legal summary
+  (`description`/`how`/`note`) is.
+* Translations are data overlays that fall back to English, so partial
+  translations are welcome and never break the site.
+
 ## Making changes
 
 The easiest way to make a change is to simply edit a file from your browser.

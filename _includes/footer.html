@@ -1,15 +1,19 @@
       <footer class="site-footer clearfix">
         <nav>
-          <a href="/about/">About</a>
-          <a href="/terms-of-service/">Terms of Service</a>
-          {% github_edit_link "Help improve this page" %}
+          <a href="/about/">{% include t.html key="nav_about" %}</a>
+          <a href="/terms-of-service/">{% include t.html key="nav_terms" %}</a>
+          {% comment %}
+            Built by hand (rather than the {% github_edit_link %} tag) so the link
+            text can be localized. Produces the same URL the tag would, so HTML
+            Proofer treats it identically.
+          {% endcomment %}
+          <a href="{{ site.github.repository_url }}/edit/{{ site.github.source.branch }}/{{ page.path }}">{% include t.html key="nav_improve" %}</a>
         </nav>
         <p>
-          The content of this site is licensed under the <a href="https://creativecommons.org/licenses/by/3.0/">
-          Creative Commons Attribution 3.0 Unported License</a>.
+          {% include t.html key="footer_license_notice_html" %}
         </p>
         <div class="with-love">
-          Curated with ❤️ by <a href="https://github.com">GitHub, Inc.</a> and <a href="https://github.com/github/choosealicense.com">You!</a>
+          {% include t.html key="footer_curated_html" %}
         </div>
       </footer>
 
@@ -17,7 +21,12 @@
 
     {% if page.collection == "licenses" or page.class == "license-types" %}
     <script>
-      window.annotations = {{ site.data.rules | jsonify }};
+      {%- assign i18n_lang = site.active_lang | default: site.default_lang -%}
+      {%- assign loc_rules = site.data.i18n[i18n_lang].rules -%}
+      window.annotations = {
+      {%- assign types = "permissions|conditions|limitations" | split: "|" -%}
+      {% for type in types %}"{{ type }}": [{% for r in site.data.rules[type] %}{% assign lr = loc_rules[type][r.tag] %}{"tag": {{ r.tag | jsonify }}, "label": {{ lr.label | default: r.label | jsonify }}, "description": {{ lr.description | default: r.description | jsonify }}}{% unless forloop.last %}, {% endunless %}{% endfor %}]{% unless forloop.last %}, {% endunless %}{% endfor %}
+      };
       {% if page.collection == "licenses" %}
       window.licenses = [
         {% for license in site.licenses %}
@@ -31,5 +40,13 @@
     </script>
     <script src="{{ 'assets/js/app.js' | relative_url }}"></script>
     {% endif %}
+    <script>
+      window.choosealicenseI18n = {
+        current: {{ site.active_lang | default: site.default_lang | jsonify }},
+        default: {{ site.default_lang | default: "en" | jsonify }},
+        languages: { {% for lang in site.languages %}{{ lang | jsonify }}: { "name": {{ site.data.i18n[lang].ui.language_name | default: lang | jsonify }}, "suggest": {{ site.data.i18n[lang].ui.banner_suggest | jsonify }}, "switch": {{ site.data.i18n[lang].ui.banner_switch | jsonify }}, "dismiss": {{ site.data.i18n[lang].ui.banner_dismiss | jsonify }} }{% unless forloop.last %}, {% endunless %}{% endfor %} }
+      };
+    </script>
+    <script src="{{ 'assets/js/i18n.js' | relative_url }}"></script>
   </body>
 </html>

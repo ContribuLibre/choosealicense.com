@@ -581,4 +581,69 @@ strong {
 
 }
 
+/* Language selector (works without JavaScript) */
+.language-selector {
+  float: right;
+  font-size: 0.75rem;
+  margin-top: 4px;
+  margin-bottom: 6px;
+}
+
+.language-selector ul {
+  display: inline;
+}
+
+.language-selector li {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.language-selector li:first-child {
+  margin-left: 0;
+}
+
+.language-selector .current {
+  font-weight: bold;
+  color: #444;
+}
+
+/* Language-suggestion banner, shown by assets/js/i18n.js */
+.language-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000002;
+  background: #149ad4;
+  color: #fff;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  padding: 10px 16px;
+  text-align: center;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.language-banner a.language-banner-switch {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-left: 8px;
+}
+
+.language-banner .language-banner-dismiss {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 12px;
+  padding: 2px 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .language-selector .current {
+    color: #dadada;
+  }
+}
+
 {% include css/responsive.css %}

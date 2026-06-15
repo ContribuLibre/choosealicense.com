@@ -82,7 +82,7 @@ class Choosealicense {
 
         this.copyText(textToCopy)
           .then(() => {
-            button.textContent = 'Copied!';
+            button.textContent = button.dataset.copiedLabel || 'Copied!';
           })
           .catch(() => {
             // If copying fails, leave the prompt unchanged.
