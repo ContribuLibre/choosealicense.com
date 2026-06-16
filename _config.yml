@@ -3,7 +3,10 @@ title: Choose a License
 description: Non-judgmental guidance on choosing a license for your open source project
 relative_permalinks: false
 markdown: kramdown
-url: "https://choosealicense.com"
+# Standalone-fork demo origin (GitHub Pages project site). The base path
+# (e.g. /choosealicense.com) is supplied at build time by the deploy workflow;
+# internal links are baseurl-aware so the site also works under a subpath.
+url: "https://contribulibre.github.io"
 
 # Internationalization, powered by jekyll-polyglot.
 # The default language stays at the site root (e.g. /licenses/mit/); every other

@@ -5,8 +5,9 @@ name: Deploy site to GitHub Pages
 # and would silently ignore the plugin, so we build the site ourselves here (safe
 # mode off → polyglot runs) and publish the result with the Pages deploy actions.
 #
-# One-time setup by a maintainer: Settings → Pages → Build and deployment →
-# Source → "GitHub Actions".
+# "Configure Pages" below enables Pages automatically (enablement: true). If your
+# org forbids Actions-managed Pages, enable it once by hand: Settings → Pages →
+# Build and deployment → Source → "GitHub Actions".
 
 on:
   push:
@@ -42,10 +43,17 @@ jobs:
           bundler-cache: true
 
       - name: Configure Pages
+        id: pages
+        # enablement: true turns Pages on automatically (no manual Settings step);
+        # static_site_generator computes the project base path so this fork can be
+        # served at https://<owner>.github.io/<repo>/. Internal links are baseurl-aware.
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
+          static_site_generator: jekyll
 
       - name: Build with Jekyll
-        run: bundle exec jekyll build
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
           # Lets jekyll-github-metadata resolve repository data non-interactively.

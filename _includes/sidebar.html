@@ -4,12 +4,13 @@
   {% assign i18n_lang = site.active_lang | default: site.default_lang %}
   {% assign spdx_key = page.spdx-id | downcase %}
   {% assign loc = site.data.i18n[i18n_lang].licenses[spdx_key] %}
+  {% assign bu_href = 'href="' | append: site.baseurl | append: '/' %}
 
   <a href="#" data-clipboard-target="#license-text" data-proofer-ignore="true" data-copied-label="{% include t.html key='sidebar_copied' %}" class="js-clipboard-button button">{% include t.html key="sidebar_copy" %}</a>
   {% unless page.spdx-id == 'LGPL-3.0' %}
   <h3 id="suggest-this-license">{% include t.html key="sidebar_suggest_heading" %}</h3>
   <div class="repository-suggestion">
-    {% include tmd.html key="sidebar_suggest_body_md" %}
+    {% capture suggest_body %}{% include tmd.html key="sidebar_suggest_body_md" %}{% endcapture %}{{ suggest_body | replace: 'href="/', bu_href }}
     <div class="input-wrapper">
       <input type="text" data-license-id="{{ page.spdx-id }}" placeholder="{% include t.html key='sidebar_repo_placeholder' %}" id="repository-url" title="status" />
       <div class="status-indicator"></div>
@@ -20,13 +21,13 @@
   <div class="how-to-apply">
     <h3 id="how-to-apply">{% include t.html key="sidebar_how_heading" %}</h3>
     <p>
-      {{ loc.how | default: page.how }}
+      {{ loc.how | default: page.how | replace: 'href="/', bu_href }}
     </p>
     <div class="note">
     <h4 id="optional-steps">{% include t.html key="sidebar_optional_heading" %}</h4>
     {% if page.note %}
     <p>
-      {{ loc.note | default: page.note }}
+      {{ loc.note | default: page.note | replace: 'href="/', bu_href }}
     </p>
     {% endif %}
     {% assign lateronly = false %}

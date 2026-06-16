@@ -9,6 +9,8 @@
 {% assign i18n_lang = site.active_lang | default: site.default_lang %}
 {% assign spdx_key = page.spdx-id | downcase %}
 {% assign loc = site.data.i18n[i18n_lang].licenses[spdx_key] %}
+{% comment %}Prefix root-relative links in summaries with baseurl (no-op when empty).{% endcomment %}
+{% assign bu_href = 'href="' | append: site.baseurl | append: '/' %}
 
       <div class="clearfix">
 
@@ -21,7 +23,7 @@
             {% endif %}
 
             <p>
-                {{ loc.description | default: page.description }}
+                {{ loc.description | default: page.description | replace: 'href="/', bu_href }}
             </p>
 
             <div class="license-page-details">
