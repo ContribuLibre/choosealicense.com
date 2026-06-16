@@ -5,9 +5,9 @@ name: Deploy site to GitHub Pages
 # and would silently ignore the plugin, so we build the site ourselves here (safe
 # mode off → polyglot runs) and publish the result with the Pages deploy actions.
 #
-# "Configure Pages" below enables Pages automatically (enablement: true). If your
-# org forbids Actions-managed Pages, enable it once by hand: Settings → Pages →
-# Build and deployment → Source → "GitHub Actions".
+# One-time setup by a maintainer: Settings → Pages → Build and deployment →
+# Source → "GitHub Actions" (also ensure Settings → Actions → General → Workflow
+# permissions allows the Pages deployment). The workflow does not auto-enable Pages.
 
 on:
   push:
@@ -44,12 +44,14 @@ jobs:
 
       - name: Configure Pages
         id: pages
-        # enablement: true turns Pages on automatically (no manual Settings step);
+        # Prerequisite (one-time, by a maintainer): Settings → Pages → Source →
+        # "GitHub Actions". (enablement: true is intentionally NOT used: when the
+        # token can't auto-enable Pages, actions/configure-pages crashes with an
+        # opaque "TypeError: error must be an instance of Error".)
         # static_site_generator computes the project base path so this fork can be
         # served at https://<owner>.github.io/<repo>/. Internal links are baseurl-aware.
         uses: actions/configure-pages@v5
         with:
-          enablement: true
           static_site_generator: jekyll
 
       - name: Build with Jekyll
