@@ -1,32 +1,33 @@
 name: Deploy site to GitHub Pages
 
-# The site uses jekyll-polyglot for internationalization, which is not on the
-# GitHub Pages plugin whitelist. The native Pages build runs Jekyll in safe mode
-# and would silently ignore the plugin, so we build the site ourselves here (safe
-# mode off → polyglot runs) and publish the result with the Pages deploy actions.
+# jekyll-polyglot isn't on the GitHub Pages plugin whitelist, so we build the
+# site ourselves here (Actions, safe mode off → polyglot runs) and publish the
+# built output to the `pages-build` branch. A .nojekyll file makes GitHub Pages
+# serve the pre-built files as-is (no safe-mode rebuild that would drop polyglot).
 #
-# One-time setup by a maintainer: Settings → Pages → Build and deployment →
-# Source → "GitHub Actions" (also ensure Settings → Actions → General → Workflow
-# permissions allows the Pages deployment). The workflow does not auto-enable Pages.
+# This avoids actions/configure-pages (the "GitHub Actions" Pages source), which
+# needs OIDC + pages:write and fails opaquely ("TypeError: error must be an
+# instance of Error") when those aren't available on a fork. Here we only need
+# contents:write to push a branch.
+#
+# One-time setup by a maintainer:
+#   - Settings → Pages → Source → "Deploy from a branch" → Branch: pages-build / (root)
+#   - Settings → Actions → General → Workflow permissions → "Read and write"
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
-# Allow this workflow to publish to GitHub Pages.
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write # push the built site to the pages-build branch
 
-# Allow one concurrent deployment; don't cancel an in-progress production deploy.
 concurrency:
-  group: pages
+  group: pages-deploy
   cancel-in-progress: false
 
 jobs:
-  build:
+  build-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -42,38 +43,22 @@ jobs:
           ruby-version: 3.3.4
           bundler-cache: true
 
-      - name: Configure Pages
-        id: pages
-        # Prerequisite (one-time, by a maintainer): Settings → Pages → Source →
-        # "GitHub Actions". (enablement: true is intentionally NOT used: when the
-        # token can't auto-enable Pages, actions/configure-pages crashes with an
-        # opaque "TypeError: error must be an instance of Error".)
-        # static_site_generator computes the project base path so this fork can be
-        # served at https://<owner>.github.io/<repo>/. Internal links are baseurl-aware.
-        uses: actions/configure-pages@v5
-        with:
-          static_site_generator: jekyll
-
       - name: Build with Jekyll
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        # Served at https://<owner>.github.io/<repo>/, so baseurl is the repo name.
+        run: bundle exec jekyll build --baseurl "/${{ github.event.repository.name }}"
         env:
           JEKYLL_ENV: production
           # Lets jekyll-github-metadata resolve repository data non-interactively.
           PAGES_REPO_NWO: ${{ github.repository }}
           JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Publish to pages-build branch
+        run: |
+          touch _site/.nojekyll
+          cd _site
+          git init -q -b pages-build
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Deploy ${{ github.sha }}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" pages-build
