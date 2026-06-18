@@ -10,6 +10,9 @@
 # --- Language metadata -------------------------------------------------------
 language_name: "English"
 language_selector_label: "Language"
+# Writing direction: "ltr" (default) or "rtl" (right-to-left, e.g. Arabic).
+# Other languages inherit this "ltr"; only RTL languages override it.
+text_direction: "ltr"
 
 # --- Chrome: navigation & footer --------------------------------------------
 nav_about: "About"
