@@ -20,7 +20,8 @@ task :test do
                                           %r{https://contribulibre\.github\.io} => '' },
                               url_ignore: [%r{https://github.com/[^/]+/[^/]+/edit/[^/]+/_licenses/},
                                            %r{https://help.github.com},
-                                           %r{https://opensource.org}],
+                                           %r{https://opensource.org},
+                                           %r{https://git.savannah.gnu.org}],
                               hydra: { max_concurrency: 10 },
                               check_img_http: true).run
 end
