@@ -701,6 +701,10 @@ strong {
   .language-suggestion-long { display: inline; }
 }
 
+/* The bold language name should keep the link's blue, not the global dark <strong>
+   colour, so the emphasis reads as part of the link. */
+.language-suggestion-link strong { color: inherit; }
+
 /* The link inherits the site's blue, hover-underlined link style. The arrow is a
    separate element (outside the link) so the underline stays under the text only.
    Its direction follows the page: → in LTR, ← in RTL (selector on the left). */
