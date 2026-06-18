@@ -48,6 +48,15 @@ sidebar_how_heading: "How to apply this license"
 sidebar_optional_heading: "Optional steps"
 sidebar_source: "Source"
 sidebar_using_heading: "Who’s using this license?"
+# Package-manager note. Placeholders are filled in and left untranslated: %id% is
+# the SPDX id (as <code>), %languages% the language links, %clauses% the optional
+# parenthetical(s). Only the surrounding prose here is translated.
+sidebar_pkg_html: |-
+  Add %id%%clauses% to your project’s package description, if applicable (e.g., %languages%). This will ensure the license is displayed in package directories.
+sidebar_pkg_only_html: " (or %id% to disallow future versions)"
+sidebar_pkg_ofl_html: " (or %id% if a Reserved Font Name is specified after the copyright statement)"
+sidebar_gplcc_html: |-
+  If you would like your project to adopt the GPL-3.0’s cure provision, add the <a href="https://github.com/gplcc/gplcc/blob/master/Project/COMMITMENT">text</a> of the <a href="https://gplcc.github.io/gplcc/">GPL Cooperation Commitment</a> to a file named <code>COMMITMENT</code> in the same directory as your %id% license file.
 
 # --- License overview cards (/licenses/) ------------------------------------
 overview_view_full: "View full %title% »"

@@ -35,9 +35,21 @@
     {% elsif page.spdx-id contains 'GFDL' %}{% assign lateronly = true %}{% endif %}
     {% assign ofl = false %}
     {% if page.spdx-id contains 'OFL-1' %}{% assign ofl = true %}{% endif %}
-    <p id="package-metadata">Add <strong><code>{{ page.spdx-id }}{% if lateronly %}-or-later{% endif %}{% if ofl %}-no-RFN{% endif %}</code></strong>{% if lateronly %} (or <strong><code>{{ page.spdx-id }}-only</code></strong> to disallow future versions){% endif %}{% if ofl %} (or <strong><code>{{ page.spdx-id }}-RFN</code></strong> if a Reserved Font Name is specified after the copyright statement){% endif %} to your project’s package description, if applicable (e.g., <a href="https://docs.npmjs.com/cli/v7/configuring-npm/package-json#license">Node.js</a>, <a href="https://guides.rubygems.org/specification-reference/#license=">Ruby</a>, and <a href="https://doc.rust-lang.org/cargo/reference/manifest.html#the-license-and-license-file-fields">Rust</a>). This will ensure the license is displayed in package directories.</p>
+    {% comment %}
+      Package-manager note. The bold tokens stay untranslated: the SPDX ids
+      (built here as <code>) and the language names/links. Only the prose comes
+      from the translations, via %id% / %clauses% / %languages% placeholders.
+    {% endcomment %}
+    {%- capture pkg_id -%}<strong><code>{{ page.spdx-id }}{% if lateronly %}-or-later{% endif %}{% if ofl %}-no-RFN{% endif %}</code></strong>{%- endcapture -%}
+    {%- capture pkg_only -%}{% if lateronly %}{% capture pkg_only_id %}<strong><code>{{ page.spdx-id }}-only</code></strong>{% endcapture %}{% capture pkg_only_tpl %}{% include t.html key="sidebar_pkg_only_html" %}{% endcapture %}{{ pkg_only_tpl | replace: '%id%', pkg_only_id }}{% endif %}{%- endcapture -%}
+    {%- capture pkg_ofl -%}{% if ofl %}{% capture pkg_ofl_id %}<strong><code>{{ page.spdx-id }}-RFN</code></strong>{% endcapture %}{% capture pkg_ofl_tpl %}{% include t.html key="sidebar_pkg_ofl_html" %}{% endcapture %}{{ pkg_ofl_tpl | replace: '%id%', pkg_ofl_id }}{% endif %}{%- endcapture -%}
+    {%- assign pkg_clauses = pkg_only | append: pkg_ofl -%}
+    {%- capture pkg_langs -%}<a href="https://docs.npmjs.com/cli/v7/configuring-npm/package-json#license">Node.js</a>{% include t.html key="using_separator" %}<a href="https://guides.rubygems.org/specification-reference/#license=">Ruby</a>{% include t.html key="using_last_separator" %}<a href="https://doc.rust-lang.org/cargo/reference/manifest.html#the-license-and-license-file-fields">Rust</a>{%- endcapture -%}
+    {%- capture pkg_html -%}{% include t.html key="sidebar_pkg_html" %}{%- endcapture -%}
+    <p id="package-metadata">{{ pkg_html | replace: '%id%', pkg_id | replace: '%clauses%', pkg_clauses | replace: '%languages%', pkg_langs }}</p>
     {% if page.spdx-id contains 'GPL-2' %}
-    <p id="gplcc">If you would like your project to adopt the GPL-3.0’s cure provision, add the <a href="https://github.com/gplcc/gplcc/blob/master/Project/COMMITMENT">text</a> of the <a href="https://gplcc.github.io/gplcc/">GPL Cooperation Commitment</a> to a file named <code>COMMITMENT</code> in the same directory as your {{ page.spdx-id }} license file.</p>
+    {%- capture gplcc_html -%}{% include t.html key="sidebar_gplcc_html" %}{%- endcapture -%}
+    <p id="gplcc">{{ gplcc_html | replace: '%id%', page.spdx-id }}</p>
     {% endif %}
     </div>
   </div>

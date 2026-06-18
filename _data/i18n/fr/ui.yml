@@ -45,6 +45,15 @@ sidebar_how_heading: "Comment appliquer cette licence"
 sidebar_optional_heading: "Étapes facultatives"
 sidebar_source: "Source"
 sidebar_using_heading: "Qui utilise cette licence ?"
+# Note pour les gestionnaires de paquets. %id% (identifiant SPDX en <code>),
+# %languages% (liens des langages) et %clauses% restent non traduits ; seule la
+# prose ci-dessous est traduite.
+sidebar_pkg_html: |-
+  Ajoutez %id%%clauses% aux métadonnées de paquet de votre projet, le cas échéant (par ex. %languages%). La licence sera ainsi affichée dans les annuaires de paquets.
+sidebar_pkg_only_html: " (ou %id% pour interdire les versions futures)"
+sidebar_pkg_ofl_html: " (ou %id% si un nom de police réservé est indiqué après la mention de droit d’auteur)"
+sidebar_gplcc_html: |-
+  Si vous souhaitez que votre projet adopte la clause de régularisation de la GPL-3.0, ajoutez le <a href="https://github.com/gplcc/gplcc/blob/master/Project/COMMITMENT">texte</a> du <a href="https://gplcc.github.io/gplcc/">GPL Cooperation Commitment</a> dans un fichier nommé <code>COMMITMENT</code>, dans le même répertoire que votre fichier de licence %id%.
 
 # --- Cartes de présentation des licences (/licenses/) -----------------------
 overview_view_full: "Texte intégral : %title% »"
