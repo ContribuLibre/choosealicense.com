@@ -29,6 +29,14 @@ rules_permissions: "Permissions"
 rules_conditions: "Conditions"
 rules_limitations: "Limitations"
 
+# --- Rule tooltips (assembled in assets/js/app.js) ---------------------------
+# Reorderable template: %label%, %category% and %description% are filled per rule.
+# Each language can reorder them (e.g. French leads with the category).
+tooltip_format: "%label% %category%: %description%"
+tooltip_cat_permissions: "permission"
+tooltip_cat_conditions: "condition"
+tooltip_cat_limitations: "limitation"
+
 # --- License page sidebar ----------------------------------------------------
 sidebar_copy: "Copy license text to clipboard"
 sidebar_copied: "Copied!"

@@ -26,6 +26,14 @@ rules_permissions: "Permissions"
 rules_conditions: "Conditions"
 rules_limitations: "Limitations"
 
+# --- Infobulles des règles (assemblées dans assets/js/app.js) ----------------
+# Gabarit réordonnable : %label%, %category% et %description% sont remplacés pour
+# chaque règle. L'ordre français place la catégorie en tête : « Permission Titre : description ».
+tooltip_format: "%category% %label% : %description%"
+tooltip_cat_permissions: "Permission"
+tooltip_cat_conditions: "Condition"
+tooltip_cat_limitations: "Limitation"
+
 # --- Barre latérale des pages de licence ------------------------------------
 sidebar_copy: "Copier le texte de la licence"
 sidebar_copied: "Copié !"
