@@ -584,13 +584,32 @@ strong {
 
 }
 
+/* Top bar: breadcrumb on the leading side, the language cluster (suggestion +
+   selector) on the trailing side, all vertically centered on one row. */
+.topbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin-bottom: 12px;
+}
+
+.topbar > ol { margin: 0; }
+
+/* The cluster sits at the trailing edge (right in LTR, left in RTL) and keeps the
+   suggestion and the selector on a single, vertically centered row, so the
+   suggestion arrow lines up with the middle of the selector button. */
+.lang-cluster {
+  margin-inline-start: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 /* Language selector — native <details> dropdown (works without JavaScript) */
 .language-selector {
-  float: right;
   position: relative;
   font-size: 0.75rem;
-  margin-top: 4px;
-  margin-bottom: 6px;
 }
 
 .language-selector > summary {
@@ -662,13 +681,24 @@ strong {
    when the browser's preferred language differs from the displayed one and no
    choice has been stored yet. Floats just to the left of the selector (same row). */
 .language-suggestion {
-  float: right;
   display: flex;
   align-items: center;
   gap: 4px;
-  margin: 5px 6px 6px 0;
   font-size: 0.75rem;
   white-space: nowrap;
+}
+
+/* The class rule above outweighs the [hidden] UA rule, so the empty placeholder
+   would show before the script fills it; keep it hidden until then. */
+.language-suggestion[hidden] { display: none; }
+
+/* Mobile-first: show the short label by default and swap to the long sentence
+   once the viewport is wide enough. Both are in the link; CSS picks one. */
+.language-suggestion-long { display: none; }
+
+@media (min-width: 48rem) {
+  .language-suggestion-short { display: none; }
+  .language-suggestion-long { display: inline; }
 }
 
 /* The link inherits the site's blue, hover-underlined link style. The arrow is a
@@ -724,9 +754,7 @@ strong {
 [dir="rtl"] .site-footer nav a { margin-left: 0; margin-right: 20px; }
 [dir="rtl"] .with-love { float: left; clear: left; }
 
-[dir="rtl"] .language-selector { float: left; }
 [dir="rtl"] .language-menu { right: auto; left: 0; }
-[dir="rtl"] .language-suggestion { float: left; margin: 5px 0 6px 6px; }
 
 [dir="rtl"] th,
 [dir="rtl"] td { text-align: right; }

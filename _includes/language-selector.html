@@ -8,6 +8,8 @@
 {%- assign current_lang = site.active_lang | default: site.default_lang -%}
 {%- if site.languages.size > 1 -%}
 {%- assign current_name = site.data.i18n[current_lang].ui.language_name | default: current_lang -%}
+<div class="lang-cluster">
+<div class="language-suggestion" hidden aria-live="polite"></div>
 <details class="language-selector">
   <summary aria-label="{% include t.html key='language_selector_label' %}" title="{% include t.html key='language_selector_label' %}">
     <span class="language-selector-icon" aria-hidden="true">{% include language-icon.svg %}</span>
@@ -28,5 +30,5 @@
     {%- endfor -%}
   </ul>
 </details>
-<div class="language-suggestion" hidden aria-live="polite"></div>
+</div>
 {%- endif -%}

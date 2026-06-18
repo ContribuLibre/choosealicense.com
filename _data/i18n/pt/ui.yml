@@ -211,6 +211,6 @@ notfound_p2: |-
 # --- Faixa JavaScript de sugestão de idioma (assets/js/i18n.js) --------------
 # %language% (banner_switch) = nome do idioma sugerido; banner_suggest inclui
 # diretamente o nome para respeitar a gramática e a grafia de cada idioma.
-banner_suggest: "Esta página também está disponível em português."
-banner_switch: "Mudar para português"
+banner_suggest: "Esta página também está disponível em **português**."
+banner_switch: "Mudar para **português**"
 banner_dismiss: "Dispensar"

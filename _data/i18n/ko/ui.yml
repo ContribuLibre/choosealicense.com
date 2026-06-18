@@ -211,6 +211,6 @@ notfound_p2: |-
 # --- 자바스크립트 언어 제안 배너(assets/js/i18n.js) --------------------------
 # banner_switch의 %language%는 제안된 언어의 이름입니다. banner_suggest는 이름을
 # 직접 포함하므로 언어마다 문법과 표기를 스스로 제어합니다.
-banner_suggest: "이 페이지는 한국어로도 제공됩니다."
-banner_switch: "한국어로 전환"
+banner_suggest: "이 페이지는 **한국어**로도 제공됩니다."
+banner_switch: "**한국어**로 전환"
 banner_dismiss: "닫기"

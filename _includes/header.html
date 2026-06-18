@@ -30,9 +30,10 @@
   <body class="{{ page.layout }}{% if page.class %} {{ page.class }}{% endif %}">
     <div class="container">
 
-      {% include language-selector.html %}
-
-      {% include breadcrumbs.html %}
+      <div class="topbar">
+        {% include breadcrumbs.html %}
+        {% include language-selector.html %}
+      </div>
 
       {% if page.title %}
         <h1>{% if page.title_key %}{% include t.html key=page.title_key %}{% else %}{{ page.title | markdownify | strip_html | strip_newlines }}{% endif %}</h1>

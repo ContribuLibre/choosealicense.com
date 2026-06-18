@@ -92,18 +92,38 @@
     }
   }
 
+  // Render a string into el using a tiny **bold** mini-markup: text wrapped in
+  // double asterisks becomes <strong>. This lets each translation bold its own
+  // language name (the word differs and even its position differs per language)
+  // without the script having to guess where the name sits in the sentence.
+  function renderInto(el, template) {
+    var parts = String(template == null ? '' : template).split('**');
+    for (var i = 0; i < parts.length; i++) {
+      if (!parts[i]) {
+        continue;
+      }
+      if (i % 2 === 1) {
+        var strong = document.createElement('strong');
+        strong.textContent = parts[i];
+        el.appendChild(strong);
+      } else {
+        el.appendChild(document.createTextNode(parts[i]));
+      }
+    }
+  }
+
   // Surface a visible, clickable suggestion beside the language selector: a plain
   // blue text link plus a separate arrow pointing at the selector. The arrow is
   // kept out of the link so the hover underline stays under the text only; its
   // direction (→ / ←) is set in CSS so it follows the page direction (LTR/RTL).
+  // Both a short and a long label are rendered; CSS shows whichever fits the
+  // viewport (mobile-first: short by default, long once there is room).
   function showSuggestion(lang, path) {
     var container = document.querySelector('.language-suggestion');
     if (!container) {
       return;
     }
     var strings = cfg.languages[lang] || {};
-    var name = strings.name || lang;
-    var text = (strings.switch || strings.suggest || '').replace('%language%', name) || name;
 
     var link = document.createElement('a');
     link.className = 'language-suggestion-link';
@@ -111,7 +131,17 @@
     link.setAttribute('hreflang', lang);
     link.setAttribute('lang', lang);
     link.setAttribute('rel', 'alternate');
-    link.textContent = text;
+
+    var shortLabel = document.createElement('span');
+    shortLabel.className = 'language-suggestion-short';
+    renderInto(shortLabel, strings.switch || strings.suggest || lang);
+    link.appendChild(shortLabel);
+
+    var longLabel = document.createElement('span');
+    longLabel.className = 'language-suggestion-long';
+    renderInto(longLabel, strings.suggest || strings.switch || lang);
+    link.appendChild(longLabel);
+
     link.addEventListener('click', function () {
       setStored(lang);
     });
