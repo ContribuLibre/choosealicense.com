@@ -581,31 +581,78 @@ strong {
 
 }
 
-/* Language selector (works without JavaScript) */
+/* Language selector — native <details> dropdown (works without JavaScript) */
 .language-selector {
   float: right;
+  position: relative;
   font-size: 0.75rem;
   margin-top: 4px;
   margin-bottom: 6px;
 }
 
-.language-selector ul {
-  display: inline;
-}
-
-.language-selector li {
-  display: inline-block;
-  margin-left: 8px;
-}
-
-.language-selector li:first-child {
-  margin-left: 0;
-}
-
-.language-selector .current {
-  font-weight: bold;
+.language-selector > summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background: #fff;
   color: #444;
+  user-select: none;
 }
+
+.language-selector > summary::-webkit-details-marker { display: none; }
+.language-selector > summary::marker { content: ""; }
+
+.language-selector-icon svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.language-selector-caret { font-size: 0.7rem; }
+
+.language-menu {
+  position: absolute;
+  right: 0;
+  margin-top: 4px;
+  min-width: 170px;
+  max-height: 60vh;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  z-index: 1000003;
+  padding: 4px 0;
+}
+
+.language-menu li {
+  display: block;
+  margin: 0;
+}
+
+.language-menu a {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 6px 12px;
+  color: #444;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.language-menu a:hover,
+.language-menu a:focus {
+  background: #f0f0f0;
+  text-decoration: none;
+}
+
+.language-menu a[aria-current="true"] { font-weight: bold; }
+.language-menu .checkmark { color: #149ad4; }
 
 /* Language-suggestion banner, shown by assets/js/i18n.js */
 .language-banner {
@@ -641,8 +688,24 @@ strong {
 }
 
 @media (prefers-color-scheme: dark) {
-  .language-selector .current {
+  .language-selector > summary {
+    background: #2a2a2a;
+    border-color: #555;
     color: #dadada;
+  }
+
+  .language-menu {
+    background: #2a2a2a;
+    border-color: #555;
+  }
+
+  .language-menu a {
+    color: #dadada;
+  }
+
+  .language-menu a:hover,
+  .language-menu a:focus {
+    background: #3a3a3a;
   }
 }
 
