@@ -1,11 +1,12 @@
-// Progressive language detection. The site is fully usable without this file:
-// the language selector is plain links and every page exists at its own URL.
-// This script only adds two conveniences on top:
-//   1. honour an explicit prior choice (stored when the visitor uses the
+// Progressive language help. The site is fully usable without this file: the
+// language selector is plain links and every page exists at its own URL. On top
+// of that, this script:
+//   1. honours an explicit prior choice (stored when the visitor uses the
 //      selector) by sending them to that language's URL, and
-//   2. on a first visit to a default-language page, gently suggest the browser
-//      language with a dismissible banner — never an automatic redirect, so it
-//      stays friendly to users and search-engine crawlers alike.
+//   2. when there is no stored choice and the browser's preferred available
+//      language differs from the one shown, surfaces a visible, clickable
+//      suggestion next to the language selector (never an automatic redirect, so
+//      it stays friendly to users and search-engine crawlers alike).
 //
 // Language URLs are read from the <link rel="alternate" hreflang> tags already
 // in the page, so this file needs no list of pages.
@@ -91,48 +92,28 @@
     }
   }
 
-  function showBanner(lang, path) {
+  // Surface a visible, clickable suggestion next to the language selector.
+  function showSuggestion(lang, path) {
+    var container = document.querySelector('.language-suggestion');
+    if (!container) {
+      return;
+    }
     var strings = cfg.languages[lang] || {};
     var name = strings.name || lang;
-    var suggest = (strings.suggest || '').replace('%language%', name);
-    var switchText = (strings.switch || '').replace('%language%', name);
-    var dismissText = strings.dismiss || '×';
-
-    var bar = document.createElement('div');
-    bar.className = 'language-banner';
-    bar.setAttribute('role', 'region');
-    bar.setAttribute('lang', lang);
-
-    if (suggest) {
-      var message = document.createElement('span');
-      message.textContent = suggest + ' ';
-      bar.appendChild(message);
-    }
+    var text = (strings.suggest || '').replace('%language%', name) || name;
 
     var link = document.createElement('a');
-    link.className = 'language-banner-switch';
     link.href = path;
     link.setAttribute('hreflang', lang);
-    link.textContent = switchText || name;
+    link.setAttribute('lang', lang);
+    link.setAttribute('rel', 'alternate');
+    link.textContent = text + ' →';
     link.addEventListener('click', function () {
       setStored(lang);
     });
-    bar.appendChild(link);
 
-    var dismiss = document.createElement('button');
-    dismiss.type = 'button';
-    dismiss.className = 'language-banner-dismiss';
-    dismiss.textContent = dismissText;
-    dismiss.addEventListener('click', function () {
-      // Treat dismissal as "I'm happy here" so we stop suggesting.
-      setStored(cfg.current);
-      if (bar.parentNode) {
-        bar.parentNode.removeChild(bar);
-      }
-    });
-    bar.appendChild(dismiss);
-
-    document.body.appendChild(bar);
+    container.appendChild(link);
+    container.hidden = false;
   }
 
   function run() {
@@ -141,18 +122,19 @@
     var alts = alternates();
     var stored = getStored();
 
-    // 1) Honour an explicit prior choice.
-    if (stored && cfg.languages[stored] && stored !== cfg.current && alts[stored]) {
-      window.location.replace(alts[stored]);
+    // An explicit prior choice wins: honour it (and don't suggest anything).
+    if (stored) {
+      if (cfg.languages[stored] && stored !== cfg.current && alts[stored]) {
+        window.location.replace(alts[stored]);
+      }
       return;
     }
 
-    // 2) First visit on the default language: suggest the browser language.
-    if (!stored && cfg.current === cfg.default) {
-      var detected = detectFromBrowser();
-      if (detected && detected !== cfg.current && alts[detected]) {
-        showBanner(detected, alts[detected]);
-      }
+    // No stored choice: if the browser's preferred available language differs
+    // from the one shown, suggest it next to the selector.
+    var detected = detectFromBrowser();
+    if (detected && detected !== cfg.current && alts[detected]) {
+      showSuggestion(detected, alts[detected]);
     }
   }
 

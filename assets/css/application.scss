@@ -654,37 +654,34 @@ strong {
 .language-menu a[aria-current="true"] { font-weight: bold; }
 .language-menu .checkmark { color: #149ad4; }
 
-/* Language-suggestion banner, shown by assets/js/i18n.js */
-.language-banner {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1000002;
+/* Language suggestion: a clickable badge shown under the selector by
+   assets/js/i18n.js when the browser's preferred language differs from the one
+   displayed and no choice has been stored yet. */
+.language-suggestion {
+  float: right;
+  clear: right;
+  margin: 0 0 6px;
+  max-width: 260px;
+  text-align: right;
+}
+
+.language-suggestion a {
+  display: inline-block;
   background: #149ad4;
   color: #fff;
-  font-size: 0.8125rem;
-  line-height: 1.4;
-  padding: 10px 16px;
-  text-align: center;
-  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.15);
-}
-
-.language-banner a.language-banner-switch {
-  color: #fff;
-  font-weight: bold;
-  text-decoration: underline;
-  margin-left: 8px;
-}
-
-.language-banner .language-banner-dismiss {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  color: #fff;
+  font-size: 0.75rem;
+  font-weight: normal;
+  line-height: 1.3;
+  padding: 6px 10px;
   border-radius: 3px;
-  cursor: pointer;
-  margin-left: 12px;
-  padding: 2px 8px;
+  text-decoration: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.language-suggestion a:hover,
+.language-suggestion a:focus {
+  background: #1187bb;
+  text-decoration: none;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -731,6 +728,7 @@ strong {
 
 [dir="rtl"] .language-selector { float: left; }
 [dir="rtl"] .language-menu { right: auto; left: 0; }
+[dir="rtl"] .language-suggestion { float: left; clear: left; text-align: left; }
 
 [dir="rtl"] th,
 [dir="rtl"] td { text-align: right; }
