@@ -212,5 +212,5 @@ notfound_p2: |-
 # banner_switch의 %language%는 제안된 언어의 이름입니다. banner_suggest는 이름을
 # 직접 포함하므로 언어마다 문법과 표기를 스스로 제어합니다.
 banner_suggest: "이 페이지는 한국어로도 제공됩니다."
-banner_switch: "%language%(으)로 보기"
+banner_switch: "한국어로 전환"
 banner_dismiss: "닫기"

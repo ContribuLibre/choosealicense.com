@@ -92,7 +92,15 @@
     }
   }
 
-  // Surface a visible, clickable suggestion next to the language selector.
+  // A curved arrow drawn from the suggestion button toward the language selector.
+  var SUGGESTION_ARROW =
+    '<svg class="language-suggestion-arrow" viewBox="0 0 40 24" aria-hidden="true" focusable="false">' +
+    '<path d="M3 19 C 16 19, 21 6, 33 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>' +
+    '<path d="M26 2.5 L 34.5 6 L 27.5 11.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>' +
+    '</svg>';
+
+  // Surface a visible, clickable suggestion beside the language selector, with a
+  // curved arrow pointing at it.
   function showSuggestion(lang, path) {
     var container = document.querySelector('.language-suggestion');
     if (!container) {
@@ -100,19 +108,21 @@
     }
     var strings = cfg.languages[lang] || {};
     var name = strings.name || lang;
-    var text = (strings.suggest || '').replace('%language%', name) || name;
+    var text = (strings.switch || strings.suggest || '').replace('%language%', name) || name;
 
     var link = document.createElement('a');
+    link.className = 'language-suggestion-link';
     link.href = path;
     link.setAttribute('hreflang', lang);
     link.setAttribute('lang', lang);
     link.setAttribute('rel', 'alternate');
-    link.textContent = text + ' →';
+    link.textContent = text;
     link.addEventListener('click', function () {
       setStored(lang);
     });
 
     container.appendChild(link);
+    container.insertAdjacentHTML('beforeend', SUGGESTION_ARROW);
     container.hidden = false;
   }
 

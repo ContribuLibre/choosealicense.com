@@ -210,5 +210,5 @@ notfound_p2: |-
 # banner_switch 的 %language% 是被建议语言的名称；banner_suggest 直接嵌入
 # 名称，以便每种语言自行控制其语法和大小写。
 banner_suggest: "本页面也提供中文版本。"
-banner_switch: "查看 %language% 版本"
+banner_switch: "切换到中文"
 banner_dismiss: "忽略"

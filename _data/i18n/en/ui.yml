@@ -218,5 +218,5 @@ notfound_p2: |-
 # banner_switch's %language% is the suggested language's name; banner_suggest
 # embeds the name directly so each language controls its grammar and casing.
 banner_suggest: "This page is also available in English."
-banner_switch: "View in %language%"
+banner_switch: "Switch to English"
 banner_dismiss: "Dismiss"

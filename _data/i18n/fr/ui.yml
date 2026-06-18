@@ -212,5 +212,5 @@ notfound_p2: |-
 # %language% (banner_switch) = nom de la langue suggérée ; banner_suggest intègre
 # directement le nom pour respecter la grammaire et la casse de chaque langue.
 banner_suggest: "Cette page est aussi disponible en français."
-banner_switch: "Voir en %language%"
+banner_switch: "Passer en français"
 banner_dismiss: "Ignorer"

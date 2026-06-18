@@ -212,5 +212,5 @@ notfound_p2: |-
 # %language% (في banner_switch) = اسم اللغة المقترحة؛ أما banner_suggest فيضمّن
 # الاسم مباشرةً لتراعي كل لغة قواعدها وصياغتها.
 banner_suggest: "هذه الصفحة متوفرة أيضًا بالعربية."
-banner_switch: "العرض بـ%language%"
+banner_switch: "التبديل إلى العربية"
 banner_dismiss: "تجاهل"
