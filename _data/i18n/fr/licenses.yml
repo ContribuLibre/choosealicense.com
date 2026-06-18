@@ -7,6 +7,9 @@
 # licences afficheront leur synthèse anglaise jusqu'à ce qu'elles soient traduites.
 
 mit:
+  # Short display name used in the home page "who uses it" sentence ("la licence MIT").
+  # Only that sentence reads loc.nickname; the license title stays "MIT License" elsewhere.
+  nickname: "MIT"
   description: |-
     Une licence permissive courte et simple, dont les seules conditions imposent de conserver les mentions de droit d’auteur et de licence. Les œuvres sous licence, leurs modifications et les œuvres plus larges peuvent être distribuées sous des conditions différentes et sans code source.
   how: |-

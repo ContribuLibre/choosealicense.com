@@ -53,7 +53,9 @@ sidebar_using_heading: "Who’s using this license?"
 overview_view_full: "View full %title% »"
 
 # --- "Who uses it" sentence (home page) -------------------------------------
-using_and: "and"
+# Project-list separators; the one before the last item can keep a serial comma.
+using_separator: ", "
+using_last_separator: ", and "
 using_sentence_plural: "%projects% use the %license%."
 using_sentence_singular: "%projects% uses the %license%."
 
@@ -201,7 +203,8 @@ notfound_p2: |-
   If you were trying to see a license, go to [licenses](/licenses).
 
 # --- JavaScript language-suggestion banner (assets/js/i18n.js) --------------
-# %language% is replaced with the suggested language's name.
-banner_suggest: "This page is also available in %language%."
+# banner_switch's %language% is the suggested language's name; banner_suggest
+# embeds the name directly so each language controls its grammar and casing.
+banner_suggest: "This page is also available in English."
 banner_switch: "View in %language%"
 banner_dismiss: "Dismiss"
