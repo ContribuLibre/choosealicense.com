@@ -1,10 +1,10 @@
 # Synthèses françaises des licences (valeur NON juridique). Clé = identifiant SPDX
 # en minuscules. Seuls les champs descriptifs sont traduits ; chaque champ absent
 # retombe sur le front matter anglais du fichier _licenses/<id>.txt, et le TEXTE
-# JURIDIQUE de la licence n'est jamais traduit.
+# JURIDIQUE de la licence n’est jamais traduit.
 #
 # Cette démo couvre les licences du « spectre » de la page /licenses/. Les autres
-# licences afficheront leur synthèse anglaise jusqu'à ce qu'elles soient traduites.
+# licences afficheront leur synthèse anglaise jusqu’à ce qu’elles soient traduites.
 
 mit:
   # Short display name used in the home page "who uses it" sentence ("la licence MIT").
@@ -131,13 +131,13 @@ cc-by-4.0:
   description: |-
     Autorise presque tout usage, sous réserve de créditer l’auteur et d’inclure la mention de licence. Fréquemment utilisée pour des contenus médias et du matériel pédagogique. C’est la licence la plus courante pour les publications scientifiques en libre accès. Déconseillée pour les logiciels.
   how: |-
-    Créez un fichier texte (généralement nommé LICENSE ou LICENSE.txt) à la racine de votre code source et copiez-y le texte de la licence. Il est aussi acceptable de fournir uniquement un lien vers une copie de la licence, généralement vers l’<a href='https://creativecommons.org/licenses/by/4.0/'>URL canonique de la licence</a>.
+    Créez un fichier texte (généralement nommé LICENSE ou LICENSE.txt) à la racine de votre code source et copiez-y le texte de la licence. Il est aussi acceptable de fournir uniquement un lien vers une copie de la licence, généralement vers l’<a href=’https://creativecommons.org/licenses/by/4.0/’>URL canonique de la licence</a>.
 
 cc-by-sa-4.0:
   description: |-
-    Semblable à <a href='/licenses/cc-by-4.0/'>CC-BY-4.0</a>, mais impose que les dérivés soient distribués sous la même licence ou une licence <a href="https://creativecommons.org/compatiblelicenses">compatible</a> et similaire. Fréquemment utilisée pour des contenus médias et du matériel pédagogique. Une version antérieure est la licence par défaut de Wikipédia et d’autres projets Wikimedia. Déconseillée pour les logiciels.
+    Semblable à <a href=’/licenses/cc-by-4.0/’>CC-BY-4.0</a>, mais impose que les dérivés soient distribués sous la même licence ou une licence <a href="https://creativecommons.org/compatiblelicenses">compatible</a> et similaire. Fréquemment utilisée pour des contenus médias et du matériel pédagogique. Une version antérieure est la licence par défaut de Wikipédia et d’autres projets Wikimedia. Déconseillée pour les logiciels.
   how: |-
-    Créez un fichier texte (généralement nommé LICENSE ou LICENSE.txt) à la racine de votre code source et copiez-y le texte de la licence. Il est aussi acceptable de fournir uniquement un lien vers une copie de la licence, généralement vers l’<a href='https://creativecommons.org/licenses/by-sa/4.0/'>URL canonique de la licence</a>.
+    Créez un fichier texte (généralement nommé LICENSE ou LICENSE.txt) à la racine de votre code source et copiez-y le texte de la licence. Il est aussi acceptable de fournir uniquement un lien vers une copie de la licence, généralement vers l’<a href=’https://creativecommons.org/licenses/by-sa/4.0/’>URL canonique de la licence</a>.
 
 cc0-1.0:
   description: |-

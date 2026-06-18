@@ -1,6 +1,6 @@
 # Libellés et descriptions français des règles (permissions / conditions /
-# limitations). La source de vérité reste _data/rules.yml (anglais) : l'ordre et
-# les identifiants en viennent, et toute entrée absente ici retombe sur l'anglais.
+# limitations). La source de vérité reste _data/rules.yml (anglais) : l’ordre et
+# les identifiants en viennent, et toute entrée absente ici retombe sur l’anglais.
 # Structure : <groupe> → <tag> → { label, description }.
 
 permissions:
