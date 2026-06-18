@@ -22,19 +22,19 @@ permissions:
 
 conditions:
   include-copyright:
-    label: "Mention de licence et de droit d’auteur"
+    label: "Citer auteur et licence"
     description: "Une copie de la licence et de la mention de droit d’auteur doit être incluse avec le contenu sous licence."
   include-copyright--source:
-    label: "Mention de licence et de droit d’auteur (sources)"
+    label: "Citer auteur et licence (source)"
     description: "Une copie de la licence et de la mention de droit d’auteur doit être incluse avec le contenu sous licence sous forme de code source, mais n’est pas requise pour les binaires."
   document-changes:
-    label: "Indication des modifications"
+    label: "Indiquer les modifications"
     description: "Les modifications apportées au contenu sous licence doivent être documentées."
   disclose-source:
-    label: "Divulgation des sources"
+    label: "Fournir le code source"
     description: "Le code source doit être rendu disponible lors de la distribution du contenu sous licence."
   network-use-disclose:
-    label: "L’usage en réseau vaut distribution"
+    label: "L’usage réseau vaut distribution"
     description: "Les utilisateurs qui interagissent avec le contenu sous licence via un réseau ont le droit d’en recevoir le code source."
   same-license:
     label: "Même licence"
