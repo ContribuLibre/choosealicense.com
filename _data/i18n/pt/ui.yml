@@ -1,0 +1,216 @@
+# Tradução em português (Brasil) das strings de interface e do texto das páginas.
+# Toda chave ausente aqui recai automaticamente no inglês (_data/i18n/en/ui.yml).
+# As chaves em _html contêm HTML bruto; os demais valores de várias linhas são
+# Markdown. As sínteses das licenças ficam em licenses.yml e os rótulos das
+# regras em rules.yml. Os textos jurídicos das licenças nunca são traduzidos.
+
+# --- Metadados de idioma -----------------------------------------------------
+language_name: "Português"
+language_selector_label: "Idioma"
+
+# --- Navegação e rodapé ------------------------------------------------------
+nav_about: "Sobre"
+nav_terms: "Termos de Serviço"
+nav_improve: "Ajude a melhorar esta página"
+footer_license_notice_html: |-
+  O conteúdo deste site está licenciado sob a <a href="https://creativecommons.org/licenses/by/3.0/">Licença Creative Commons Atribuição 3.0 Não Adaptada</a>.
+footer_curated_html: |-
+  Organizado com ❤️ por <a href="https://github.com">GitHub, Inc.</a> e <a href="https://github.com/github/choosealicense.com">você!</a>
+
+# --- Trilha de navegação -----------------------------------------------------
+breadcrumb_home: "Início"
+breadcrumb_licenses: "Licenças"
+
+# --- Títulos dos grupos de regras --------------------------------------------
+rules_permissions: "Permissões"
+rules_conditions: "Condições"
+rules_limitations: "Limitações"
+
+# --- Dicas de regra (montadas em assets/js/app.js) ---------------------------
+# Modelo reordenável: %label%, %category% e %description% são preenchidos por regra.
+# A ordem em português coloca a categoria primeiro: "Permissão Título: descrição".
+tooltip_format: "%category% %label%: %description%"
+tooltip_cat_permissions: "Permissão"
+tooltip_cat_conditions: "Condição"
+tooltip_cat_limitations: "Limitação"
+
+# --- Barra lateral das páginas de licença ------------------------------------
+sidebar_copy: "Copiar o texto da licença para a área de transferência"
+sidebar_copied: "Copiado!"
+sidebar_suggest_heading: "Sugerir esta licença"
+sidebar_suggest_body_md: |-
+  Abra um pull request para sugerir esta licença a um projeto que [não tem licença](/no-permission/). Seja gentil: verifique se uma licença já foi sugerida, tente sugerir uma adequada à [comunidade](/community/) do projeto e mantenha uma comunicação cordial com as pessoas que mantêm o projeto.
+sidebar_repo_placeholder: "Digite a URL do repositório no GitHub"
+sidebar_how_heading: "Como aplicar esta licença"
+sidebar_optional_heading: "Etapas opcionais"
+sidebar_source: "Fonte"
+sidebar_using_heading: "Quem está usando esta licença?"
+# Nota para gerenciadores de pacotes. %id% (identificador SPDX em <code>),
+# %languages% (links dos idiomas) e %clauses% permanecem sem tradução; apenas o
+# texto ao redor abaixo é traduzido.
+sidebar_pkg_html: |-
+  Adicione %id%%clauses% à descrição do pacote do seu projeto, se aplicável (por ex., %languages%). Isso garantirá que a licença seja exibida nos diretórios de pacotes.
+sidebar_pkg_only_html: " (ou %id% para proibir versões futuras)"
+sidebar_pkg_ofl_html: " (ou %id% se um Nome de Fonte Reservado for especificado após a declaração de direitos autorais)"
+sidebar_gplcc_html: |-
+  Se você quiser que seu projeto adote a cláusula de regularização da GPL-3.0, adicione o <a href="https://github.com/gplcc/gplcc/blob/master/Project/COMMITMENT">texto</a> do <a href="https://gplcc.github.io/gplcc/">GPL Cooperation Commitment</a> em um arquivo chamado <code>COMMITMENT</code>, no mesmo diretório do seu arquivo de licença %id%.
+
+# --- Cartões de visão geral das licenças (/licenses/) ------------------------
+overview_view_full: "Ver %title% na íntegra »"
+
+# --- Frase "quem usa" (página inicial) ---------------------------------------
+# Separadores da lista de projetos; em português, sem vírgula antes do "e".
+using_separator: ", "
+using_last_separator: " e "
+using_sentence_plural: "%projects% usam a %license%."
+using_sentence_singular: "%projects% usa a %license%."
+
+# --- Títulos das páginas -----------------------------------------------------
+page_title_home: "Escolha uma licença de código aberto"
+page_title_licenses: "Licenças"
+page_title_about: "Do que se trata?"
+page_title_community: "Projetos e comunidades existentes"
+page_title_no_permission: "Sem licença"
+page_title_non_software: "Licenças para obras que não são software"
+page_title_appendix: "Apêndice"
+page_title_404: "404 — Página não encontrada"
+
+# --- Página inicial ----------------------------------------------------------
+home_intro: |-
+  Uma licença de código aberto protege quem contribui e quem usa. Empresas e pessoas desenvolvedoras experientes não chegam perto de um projeto sem essa proteção.
+home_situation_q: "Qual das opções a seguir descreve melhor a sua situação?"
+home_community_h3: "Preciso trabalhar em uma comunidade."
+home_community_p1: |-
+  Use a [licença preferida pela comunidade](community/) para a qual você está contribuindo ou da qual você depende. Seu projeto se encaixará perfeitamente.
+home_community_p2: |-
+  Se você tiver uma dependência sem licença, peça a quem a mantém para [adicionar uma licença](no-permission/#for-users).
+home_permissive_h3: "Quero algo simples e permissivo."
+home_permissive_p1: |-
+  A [Licença MIT](licenses/mit/) é curta e direta. Ela permite que as pessoas façam quase tudo o que quiserem com o seu projeto, como criar e distribuir versões de código fechado.
+home_copyleft_h3: "Importo-me em compartilhar melhorias."
+home_copyleft_p1: |-
+  A [GNU GPLv3](licenses/gpl-3.0/) também permite que as pessoas façam quase tudo o que quiserem com o seu projeto, *exceto* distribuir versões de código fechado.
+home_more_q: "E se nenhuma dessas opções servir para mim?"
+home_nonsoftware_h3: "Meu projeto não é software."
+home_nonsoftware_p: |-
+  [Existem licenças para isso](non-software/).
+home_morechoices_h3: "Quero mais opções."
+home_morechoices_p: |-
+  [Há mais licenças disponíveis](licenses/).
+home_nolicense_h3: "Não quero escolher uma licença."
+home_nolicense_p: |-
+  [Veja o que acontece se você não escolher](no-permission/).
+
+# --- Página de licenças (/licenses/) -----------------------------------------
+licenses_intro_html: |-
+  As licenças de código aberto concedem a qualquer pessoa permissão para usar, modificar e compartilhar o software licenciado para qualquer finalidade, sujeita a condições que preservam a origem e a abertura do software. As licenças a seguir estão ordenadas pelo número de condições, da que tem mais (GNU AGPLv3) à que não tem nenhuma (Unlicense). Observe que as licenças populares destacadas na <a href="/">página inicial</a> (GNU GPLv3 e MIT) se enquadram nesse espectro.
+licenses_appendix_note_html: |-
+  Se você procura uma tabela de referência com todas as licenças do choosealicense.com, consulte o <a href="/appendix">apêndice</a>.
+licenses_outro_html: |-
+  As licenças acima representam todo o espectro das licenças de código aberto, das mais protetoras às mais incondicionais. Uma delas deve servir para a maioria dos novos projetos de código aberto. Existem muitas outras licenças de código aberto, incluindo versões mais antigas e substitutas próximas de algumas das anteriores. Consulte os recursos listados na nossa <a href="/about/">página "sobre"</a> se quiser saber mais.
+
+# --- Página "sobre" (/about/) ------------------------------------------------
+about_intro: |-
+  O GitHub quer ajudar quem desenvolve a escolher uma licença de código aberto para o seu código-fonte.
+
+  Se você já sabe o que está fazendo e tem uma licença que prefere usar, ótimo! Não estamos aqui para fazer você mudar de ideia. Mas se o grande número de opções deixa você confuso, talvez possamos ajudar.
+about_not_comprehensive_heading: "Não é abrangente"
+about_not_comprehensive_p1: |-
+  Este site não é um diretório abrangente de licenças de código aberto. A grande maioria dos projetos provavelmente será bem atendida por uma das três opções destacadas na [página inicial](/) — escolher a licença [preferida](/community/) por projetos semelhantes ao seu, ou a licença permissiva mais popular ([MIT](/licenses/mit/)), ou a licença copyleft mais popular ([GNU GPLv3](/licenses/gpl-3.0/)). Caso você tenha necessidades específicas não cobertas por essas, também destacamos [algumas outras licenças a considerar](/licenses/) e temos uma página sobre [licenças para projetos que não são software](/non-software/).
+about_not_comprehensive_p2: |-
+  Consulte nosso [apêndice](/appendix/) para uma tabela com todas as licenças catalogadas no [repositório do choosealicense.com](https://github.com/github/choosealicense.com) e os links abaixo para *ainda mais* licenças que você **não precisa** conhecer para mesmo assim escolher uma excelente licença para o seu projeto.
+about_resources_heading: "Recursos adicionais"
+about_resources_list: |-
+  * O FAQ da Open Source Initiative: [Sob qual licença de código aberto devo lançar meu software?](https://opensource.org/faq#which-license)
+  * Os [conselhos da Free Software Foundation sobre como escolher uma licença](https://www.gnu.org/licenses/license-recommendations.html)
+  * [Joinup Licensing Assistant](https://joinup.ec.europa.eu/collection/eupl/joinup-licensing-assistant-jla), um seletor de licenças interativo da Comissão Europeia
+  * [The Legal Side of Open Source](https://opensource.guide/legal/), um Open Source Guide que aborda o licenciamento e questões relacionadas
+about_improve_heading: "Ajude-nos a melhorar"
+about_improve_p: |-
+  O choosealicense.com não trata apenas de código aberto; o próprio site também é de código aberto. Viu algo que acha que poderia ser feito melhor? Fique à vontade para [fazer um fork do projeto](https://github.com/github/choosealicense.com) no GitHub e enviar um pull request. Suas melhorias são bem-vindas.
+about_disclaimer_heading: "Aviso legal"
+about_disclaimer_p: |-
+  Não somos advogados. Bem, a maioria de nós, pelo menos. O objetivo deste site não é fornecer aconselhamento jurídico. O objetivo deste site é oferecer um ponto de partida para ajudar você a fazer uma escolha consciente, apresentando de forma simplificada informações sobre licenças de código aberto populares. Se você tiver alguma dúvida sobre a melhor licença para o seu código ou qualquer outra questão jurídica relacionada a ele, é sua responsabilidade pesquisar mais a fundo ou consultar um profissional.
+
+# --- Projetos e comunidades existentes (/community/) -------------------------
+comm_p1: |-
+  Se você está contribuindo para um projeto existente ou estendendo-o, quase sempre é mais fácil continuar usando a licença desse projeto. Para encontrá-la, procure um arquivo chamado `LICENSE` ou `COPYING` e dê uma olhada no `README` do projeto. Se você não encontrar uma licença, [pergunte a quem o mantém](/no-permission/#for-users).
+comm_p2: |-
+  Dependendo da licença do projeto original, usar a mesma licença pode ser uma exigência, e não apenas a opção mais fácil. (Veja a condição "mesma licença" de [algumas licenças](/licenses/).)
+comm_p3: |-
+  Algumas comunidades têm fortes preferências por licenças específicas. Se você quiser participar de uma delas, será mais fácil usar a licença preferida, mesmo que esteja começando um projeto totalmente novo, sem dependências existentes. Alguns exemplos:
+comm_list: |-
+  * [Apache](https://www.apache.org/licenses/) exige a [Apache License 2.0](/licenses/apache-2.0/)
+  * A [Cloud Native Computing Foundation](https://github.com/cncf/foundation/blob/main/charter.md#11-ip-policy) exige a [Apache License 2.0](/licenses/apache-2.0/)
+  * A [GNU](https://www.gnu.org/licenses/license-recommendations.html) recomenda a [GNU GPLv3](/licenses/gpl-3.0/) para a maioria dos programas
+  * Os [pacotes npm](https://libraries.io/search?platforms=npm) usam de forma esmagadora as licenças [MIT](/licenses/mit/) ou a muito semelhante [ISC](/licenses/isc)
+  * O [OpenBSD](https://www.openbsd.org/policy.html) prefere a [Licença ISC](/licenses/isc/)
+  * As crates [Rust](https://rust-lang.github.io/api-guidelines/necessities.html#crate-and-its-dependencies-have-a-permissive-license-c-permissive) são licenciadas de forma esmagadora sob [MIT](/licenses/mit/) [`OR`](https://spdx.github.io/spdx-spec/v2.3/SPDX-license-expressions/#d42-disjunctive-or-operator) [Apache License 2.0](/licenses/apache-2.0/)
+  * Os plugins e temas do [WordPress](https://wordpress.org/about/license/) devem ser [GNU GPLv2](/licenses/gpl-2.0/) (ou posterior)
+  * As extensões e templates do [Joomla](https://tm.joomla.org/joomla-license-faq.html#can-i-release-an-extension-under-a-non-gpl-license) devem ser [GNU GPLv2](/licenses/gpl-2.0/) para o código PHP.
+comm_p4: |-
+  As comunidades vêm em todas as formas e tamanhos, e mais de uma comunidade pode ser pertinente (por exemplo, leve em conta [sua empresa](https://opensource.guide/legal/#what-does-my-companys-legal-team-need-to-know) se você trabalha em uma). Os exemplos acima são *muito* bem estabelecidos. Se a comunidade para a qual você está criando um projeto não tem tradições de licenciamento gravadas em pedra, ou se você não vê seu projeto como parte de nenhuma comunidade específica, tudo bem: [faça sua própria escolha de uma licença de código aberto](/).
+
+# --- Sem licença (/no-permission/) -------------------------------------------
+np_p1: |-
+  Quando você cria uma obra criativa (o que inclui código), a obra fica, por padrão, sob direitos autorais exclusivos. A menos que você inclua uma licença que especifique o contrário, ninguém mais pode copiar, distribuir ou modificar sua obra sem correr o risco de remoções, intimidações ou litígios. Uma vez que a obra passa a ter outras pessoas que contribuem (cada uma titular de direitos autorais), "ninguém" começa a incluir você.
+np_p2: |-
+  Mesmo na ausência de um arquivo de licença, você pode conceder alguns direitos nos casos em que publica seu código-fonte em um site que exige a aceitação de termos de serviço. Por exemplo, se você publica seu código-fonte em um repositório público no GitHub, você aceitou os [Termos de Serviço](https://help.github.com/articles/github-terms-of-service), pelos quais permite que outras pessoas vejam e façam fork do seu repositório. Outras pessoas podem não precisar da sua permissão se [limitações e exceções aos direitos autorais](https://en.wikipedia.org/wiki/Limitations_and_exceptions_to_copyright) se aplicarem à situação específica delas. Nem os termos do site nem as limitações de direitos autorais específicas de uma jurisdição são suficientes para os tipos de colaboração que as pessoas geralmente buscam em um hospedeiro público de código, como a experimentação, a modificação e o compartilhamento promovidos por uma licença de código aberto.
+np_p3: |-
+  Você não precisa fazer nada para *não* oferecer uma licença. No entanto, você pode querer adicionar um aviso de direitos autorais e uma declaração de que não está oferecendo nenhuma licença em um lugar de destaque (por exemplo, o README do seu projeto), para que [as pessoas usuárias](#for-users) não presumam que você cometeu um descuido. Se você for aceitar contribuições de outras pessoas ao seu projeto sem licença, pode querer estudar, com seu advogado, a adição de um acordo de contribuição ao seu projeto, para que você mantenha a permissão de direitos autorais de quem contribui, mesmo que você não conceda o mesmo.
+np_p4: |-
+  Proibir o uso do seu código talvez não seja o que você pretende com "sem licença". Uma [licença de código aberto](/) permite a reutilização do seu código mantendo os direitos autorais. Se o seu objetivo é abrir mão totalmente das restrições de direitos autorais, experimente uma [dedicação ao domínio público](/licenses/#unlicense).
+np_forusers_heading: "Para quem usa"
+np_forusers_p: |-
+  Se você encontrar um software que não tem licença, isso geralmente significa que você não tem permissão de quem criou o software para usá-lo, modificá-lo ou compartilhá-lo. Embora um hospedeiro de código como o GitHub possa permitir que você veja e faça fork do código, isso não significa que você esteja autorizado a usar, modificar ou compartilhar o software para qualquer finalidade.
+np_options_intro: "Suas opções:"
+np_options_list: |-
+  - **Peça gentilmente a quem mantém o projeto para adicionar uma licença.** A menos que o software contenha fortes indicações em contrário, a falta de uma licença provavelmente é um descuido. Se o software estiver hospedado em um site como o GitHub, abra uma issue solicitando uma licença e inclua um link para este site. Se você for ousado e for bastante óbvio qual licença é mais apropriada, abra um pull request para adicionar uma licença – veja "sugerir esta licença" na barra lateral da página de cada licença neste site (por exemplo, [MIT](/licenses/mit/#suggest-this-license)).
+  - **Não use o software.** Encontre ou crie uma alternativa que esteja sob uma licença de código aberto.
+  - **Negocie uma licença privada.** Chame seu advogado.
+
+# --- Licenças para obras que não são software (/non-software/) ---------------
+ns_intro: |-
+  As licenças de software de código aberto também podem ser usadas para obras que não são software e muitas vezes são a melhor escolha, especialmente quando as obras em questão podem ser editadas e versionadas como código-fonte. [Escolha uma licença de código aberto](/).
+ns_data_heading: "Dados, mídia, etc."
+ns_data_p: |-
+  [CC0-1.0](/licenses/cc0-1.0/), [CC-BY-4.0](/licenses/cc-by-4.0/) e [CC-BY-SA-4.0](/licenses/cc-by-sa-4.0/) são licenças [abertas](https://opendefinition.org) usadas para material que não é software, variando de conjuntos de dados a vídeos. Observe que a Creative Commons [não recomenda o uso de suas licenças para software](https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software) ou hardware.
+ns_doc_heading: "Documentação"
+ns_doc_p: |-
+  Qualquer licença de software de código aberto ou licença aberta para mídia (veja [acima](#data-media-etc)) também se aplica à documentação de software. Se você usar licenças diferentes para o seu software e a sua documentação, certifique-se de especificar que os exemplos de código-fonte na documentação também estão licenciados sob a licença do software.
+ns_fonts_heading: "Fontes"
+ns_fonts_p: |-
+  A [SIL Open Font License 1.1](/licenses/ofl-1.1/) mantém as fontes abertas, permitindo que sejam usadas livremente em outras obras.
+ns_hardware_heading: "Hardware"
+ns_hardware_p: |-
+  Projetos de [hardware de código aberto](https://oshwa.org/resources/open-source-hardware-definition/), que vão de móveis a [FPGAs](https://oshwa.org/resources/best-practices-for-sharing-fpga-designs/), são cobertos pelas licenças CERN Open Hardware: [CERN-OHL-P-2.0](/licenses/cern-ohl-p-2.0/) (permissiva), [CERN-OHL-W-2.0](/licenses/cern-ohl-w-2.0/) (fracamente recíproca) e [CERN-OHL-S-2.0](/licenses/cern-ohl-s-2.0/) (fortemente recíproca).
+ns_mixed_heading: "Projetos mistos"
+ns_mixed_p: |-
+  Se o seu projeto contém uma mistura de diferentes tipos de material, você pode incluir várias licenças, desde que seja explícito sobre qual licença se aplica a cada parte do projeto. Veja [o aviso de licença deste site](https://github.com/github/choosealicense.com#license) como exemplo.
+
+# --- Apêndice (/appendix/) ---------------------------------------------------
+appendix_intro_p1: |-
+  Para referência, aqui está uma tabela com todas as licenças descritas no [repositório do choosealicense.com](https://github.com/github/choosealicense.com).
+appendix_intro_p2: |-
+  Se você está aqui para escolher uma licença, **[comece pela página inicial](/)** para ver algumas licenças que servirão para a maioria dos casos.
+appendix_col_license: "Licença"
+appendix_legend_heading: "Legenda"
+appendix_legend_permissions_html: |-
+  As licenças de código aberto concedem ao público <span class="license-permissions"><span class="license-marker">✓</span></span> <b>permissões</b> para fazer com as obras licenciadas coisas que os direitos autorais ou outras leis de "propriedade intelectual" poderiam, de outra forma, proibir.
+appendix_legend_conditions_html: |-
+  A concessão de permissões pela maioria das licenças de código aberto está sujeita ao cumprimento de <span class="license-conditions"><span class="license-marker">ⓘ</span></span> <b>condições</b>.
+appendix_legend_limitations_html: |-
+  A maioria das licenças de código aberto também tem <span class="license-limitations"><span class="license-marker">✕</span></span> <b>limitações</b> que geralmente isentam de garantia e responsabilidade e, às vezes, excluem expressamente patentes ou marcas das concessões das licenças.
+
+# --- Página 404 --------------------------------------------------------------
+notfound_p1: |-
+  Desculpe! Não conseguimos encontrar a página que você procurava.
+notfound_p2: |-
+  Se você estava tentando ver uma licença, vá para [licenças](/licenses).
+
+# --- Faixa JavaScript de sugestão de idioma (assets/js/i18n.js) --------------
+# %language% (banner_switch) = nome do idioma sugerido; banner_suggest inclui
+# diretamente o nome para respeitar a gramática e a grafia de cada idioma.
+banner_suggest: "Esta página também está disponível em português."
+banner_switch: "Ver em %language%"
+banner_dismiss: "Dispensar"

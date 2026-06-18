@@ -1,0 +1,214 @@
+# 界面字符串与页面正文的简体中文翻译。
+# 此处缺失的任意键会自动回退到英文（_data/i18n/en/ui.yml）。
+# 以 _html 结尾的键包含原始 HTML；其余多行值为 Markdown。许可证摘要位于
+# licenses.yml，规则标签位于 rules.yml。许可证的法律正文永不翻译。
+
+# --- 语言元数据 --------------------------------------------------------------
+language_name: "中文"
+language_selector_label: "语言"
+
+# --- 导航与页脚 --------------------------------------------------------------
+nav_about: "关于"
+nav_terms: "服务条款"
+nav_improve: "帮助改进此页面"
+footer_license_notice_html: |-
+  本站内容采用 <a href="https://creativecommons.org/licenses/by/3.0/">知识共享署名 3.0 未本地化版本许可协议</a> 授权。
+footer_curated_html: |-
+  由 <a href="https://github.com">GitHub, Inc.</a> 和 <a href="https://github.com/github/choosealicense.com">你！</a> 用 ❤️ 精心整理
+
+# --- 面包屑导航 --------------------------------------------------------------
+breadcrumb_home: "首页"
+breadcrumb_licenses: "许可证"
+
+# --- 规则分组标题 ------------------------------------------------------------
+rules_permissions: "许可"
+rules_conditions: "条件"
+rules_limitations: "限制"
+
+# --- 规则提示气泡（在 assets/js/app.js 中组装）-------------------------------
+# 可重排的模板：%label%、%category% 和 %description% 会按每条规则填充。
+# 中文将类别置于开头，例如「许可 商业使用：……」。
+tooltip_format: "%category% %label%：%description%"
+tooltip_cat_permissions: "许可"
+tooltip_cat_conditions: "条件"
+tooltip_cat_limitations: "限制"
+
+# --- 许可证页面侧边栏 --------------------------------------------------------
+sidebar_copy: "将许可证文本复制到剪贴板"
+sidebar_copied: "已复制！"
+sidebar_suggest_heading: "推荐此许可证"
+sidebar_suggest_body_md: |-
+  提交一个 pull request，为某个[尚未授权](/no-permission/)的项目推荐此许可证。请保持礼貌：先看看是否已经有人推荐过许可证，尽量推荐适合该项目[社区](/community/)的许可证，并与项目维护者保持友好沟通。
+sidebar_repo_placeholder: "请输入 GitHub 仓库 URL"
+sidebar_how_heading: "如何应用此许可证"
+sidebar_optional_heading: "可选步骤"
+sidebar_source: "来源"
+sidebar_using_heading: "谁在使用此许可证？"
+# 包管理器提示。占位符会被填充并保持不译：%id% 是 SPDX 标识（以 <code> 显示），
+# %languages% 是语言链接，%clauses% 是可选的括号补充内容。此处仅翻译周边正文。
+sidebar_pkg_html: |-
+  如适用，请将 %id%%clauses% 添加到项目的包描述信息中（例如 %languages%）。这样可确保许可证显示在各包目录中。
+sidebar_pkg_only_html: " （或使用 %id% 以禁止未来的版本）"
+sidebar_pkg_ofl_html: " （或者，若在版权声明之后指定了保留字体名称，则使用 %id%）"
+sidebar_gplcc_html: |-
+  如果你希望项目采用 GPL-3.0 的补救条款，请将 <a href="https://gplcc.github.io/gplcc/">GPL Cooperation Commitment</a> 的<a href="https://github.com/gplcc/gplcc/blob/master/Project/COMMITMENT">文本</a>添加到一个名为 <code>COMMITMENT</code> 的文件中，并将其放在与 %id% 许可证文件相同的目录下。
+
+# --- 许可证概览卡片（/licenses/）--------------------------------------------
+overview_view_full: "查看完整的 %title% »"
+
+# --- 「谁在使用」句子（首页）------------------------------------------------
+# 项目列表分隔符；中文使用顿号，最后一项前无单独的「和」字。
+using_separator: "、"
+using_last_separator: "、"
+using_sentence_plural: "%projects% 使用 %license%。"
+using_sentence_singular: "%projects% 使用 %license%。"
+
+# --- 页面标题 ----------------------------------------------------------------
+page_title_home: "选择一个开源许可证"
+page_title_licenses: "许可证"
+page_title_about: "这是关于什么的？"
+page_title_community: "现有的项目与社区"
+page_title_no_permission: "无许可证"
+page_title_non_software: "非软件许可证"
+page_title_appendix: "附录"
+page_title_404: "404 未找到"
+
+# --- 首页 --------------------------------------------------------------------
+home_intro: |-
+  开源许可证保护着贡献者和用户。没有这层保护，企业和资深开发者都不会碰你的项目。
+home_situation_q: "以下哪一项最能描述你的情况？"
+home_community_h3: "我需要在一个社区中工作。"
+home_community_p1: |-
+  使用你所贡献或所依赖的[社区偏好的许可证](community/)，你的项目就能完美融入其中。
+home_community_p2: |-
+  如果你的某个依赖没有许可证，请请求其维护者[添加一个许可证](no-permission/#for-users)。
+home_permissive_h3: "我想要简单而宽松的许可证。"
+home_permissive_p1: |-
+  [MIT 许可证](licenses/mit/)简短而直接。它允许人们对你的项目做几乎任何想做的事，比如制作并发布闭源版本。
+home_copyleft_h3: "我在意改进成果能被共享。"
+home_copyleft_p1: |-
+  [GNU GPLv3](licenses/gpl-3.0/) 同样允许人们对你的项目做几乎任何想做的事，*但唯独不能*发布闭源版本。
+home_more_q: "如果这些都不适合我怎么办？"
+home_nonsoftware_h3: "我的项目不是软件。"
+home_nonsoftware_p: |-
+  [有适用于这种情况的许可证](non-software/)。
+home_morechoices_h3: "我想要更多选择。"
+home_morechoices_p: |-
+  [还有更多许可证可供选用](licenses/)。
+home_nolicense_h3: "我不想选择任何许可证。"
+home_nolicense_p: |-
+  [看看不选会发生什么](no-permission/)。
+
+# --- 许可证页面（/licenses/）------------------------------------------------
+licenses_intro_html: |-
+  开源许可证授予任何人以任何目的使用、修改和分享被许可软件的权利，但须遵守一些用以保留软件来源和开放性的条件。以下许可证按条件数量排序，从最多（GNU AGPLv3）到没有任何条件（Unlicense）。请注意，<a href="/">首页</a>上重点推荐的热门许可证（GNU GPLv3 和 MIT）也都落在这一区间之内。
+licenses_appendix_note_html: |-
+  如果你想要一张涵盖 choosealicense.com 上所有许可证的参考表，请查看<a href="/appendix">附录</a>。
+licenses_outro_html: |-
+  上述许可证代表了开源许可证的整个区间，从高度保护性到完全无条件。其中之一应当适用于大多数新的开源项目。还存在许多其他开源许可证，包括上述某些许可证的旧版本和相近替代品。如果你想进一步了解，请查阅我们<a href="/about/">关于页面</a>所列出的资源。
+
+# --- 关于页面（/about/）-----------------------------------------------------
+about_intro: |-
+  GitHub 希望帮助开发者为他们的源代码选择一个开源许可证。
+
+  如果你已经心中有数，并且有偏好使用的许可证，那很好！我们无意改变你的想法。但如果你被众多的选择弄得不知所措，也许我们能帮上忙。
+about_not_comprehensive_heading: "并不全面"
+about_not_comprehensive_p1: |-
+  本站并非开源许可证的完整目录。绝大多数项目很可能都能由[首页](/)上重点推荐的三个选项很好地满足——选择与你类似的项目所[偏好](/community/)的许可证、最受欢迎的宽松许可证（[MIT](/licenses/mit/)）、或最受欢迎的 copyleft 许可证（[GNU GPLv3](/licenses/gpl-3.0/)）。万一你有这些选项未能覆盖的特定需求，我们也重点介绍了[另外几个值得考虑的许可证](/licenses/)，并设有一个关于[非软件项目许可证](/non-software/)的页面。
+about_not_comprehensive_p2: |-
+  请查阅我们的[附录](/appendix/)，那里有一张表格收录了 [choosealicense.com 仓库](https://github.com/github/choosealicense.com)中编目的所有许可证；并参阅下方的链接，那里有*更多*许可证——你**无需**了解它们也能为你的项目选到一个很好的许可证。
+about_resources_heading: "更多资源"
+about_resources_list: |-
+  * 开源促进会（OSI）的常见问题解答：[我应该选择哪种开源许可证来发布我的软件？](https://opensource.org/faq#which-license)
+  * 自由软件基金会（FSF）关于[如何选择许可证的建议](https://www.gnu.org/licenses/license-recommendations.html)
+  * [Joinup Licensing Assistant](https://joinup.ec.europa.eu/collection/eupl/joinup-licensing-assistant-jla)，欧盟委员会提供的交互式许可证选择器
+  * [The Legal Side of Open Source](https://opensource.guide/legal/)，一份涵盖许可与相关问题的开源指南
+about_improve_heading: "帮助我们改进它"
+about_improve_p: |-
+  Choosealicense.com 不仅仅是在谈论开源；本站本身也是开源的。看到了你觉得可以做得更好的地方？欢迎在 GitHub 上[复刻本项目](https://github.com/github/choosealicense.com)并提交 pull request。我们欢迎你的改进。
+about_disclaimer_heading: "免责声明"
+about_disclaimer_p: |-
+  我们不是律师。好吧，至少我们大多数人不是。本站的目标并非提供法律建议。本站的目标是提供一个起点，通过以简化的方式介绍热门开源许可证的信息，帮助你做出明智的选择。如果你对哪种许可证最适合你的代码，或对与之相关的任何其他法律问题有疑问，那么进一步研究或咨询专业人士是你自己的责任。
+
+# --- 现有的项目与社区（/community/）-----------------------------------------
+comm_p1: |-
+  如果你正在为某个现有项目做贡献或对其进行扩展，那么继续使用该项目的许可证几乎总是最简单的做法。要找到它的许可证，请查找名为 `LICENSE` 或 `COPYING` 的文件，并浏览项目的 `README`。如果你找不到许可证，请[询问维护者](/no-permission/#for-users)。
+comm_p2: |-
+  取决于原项目的许可证，使用相同的许可证可能不只是最简单的做法，而是一项要求。（参见[某些许可证](/licenses/)的「相同许可证」条件。）
+comm_p3: |-
+  有些社区对特定许可证有强烈的偏好。如果你想参与其中之一，那么使用其偏好的许可证会更方便，即便你是在没有任何现有依赖的情况下开始一个全新的项目。一些例子包括：
+comm_list: |-
+  * [Apache](https://www.apache.org/licenses/) 要求使用 [Apache License 2.0](/licenses/apache-2.0/)
+  * [云原生计算基金会（CNCF）](https://github.com/cncf/foundation/blob/main/charter.md#11-ip-policy)要求使用 [Apache License 2.0](/licenses/apache-2.0/)
+  * [GNU](https://www.gnu.org/licenses/license-recommendations.html) 建议大多数程序使用 [GNU GPLv3](/licenses/gpl-3.0/)
+  * [npm 包](https://libraries.io/search?platforms=npm)绝大多数使用 [MIT](/licenses/mit/) 或与之非常相似的 [ISC](/licenses/isc) 许可证
+  * [OpenBSD](https://www.openbsd.org/policy.html) 偏好 [ISC 许可证](/licenses/isc/)
+  * [Rust](https://rust-lang.github.io/api-guidelines/necessities.html#crate-and-its-dependencies-have-a-permissive-license-c-permissive) crate 绝大多数以 [MIT](/licenses/mit/) [`OR`](https://spdx.github.io/spdx-spec/v2.3/SPDX-license-expressions/#d42-disjunctive-or-operator) [Apache License 2.0](/licenses/apache-2.0/) 授权
+  * [WordPress](https://wordpress.org/about/license/) 插件和主题必须采用 [GNU GPLv2](/licenses/gpl-2.0/)（或更高版本）
+  * [Joomla](https://tm.joomla.org/joomla-license-faq.html#can-i-release-an-extension-under-a-non-gpl-license) 扩展和模板的 PHP 代码必须采用 [GNU GPLv2](/licenses/gpl-2.0/)。
+comm_p4: |-
+  社区形形色色、规模各异，而且可能不止一个社区与你相关（例如，如果你受雇于某家公司，请记得考虑[你的公司](https://opensource.guide/legal/#what-does-my-companys-legal-team-need-to-know)）。上面的例子都是*非常*成熟确立的。如果你正在构建项目的那个社区并没有一成不变的许可惯例，或者你并不认为你的项目属于任何特定社区，那也没关系：[自行做出你的开源许可证选择](/)。
+
+# --- 无许可证（/no-permission/）---------------------------------------------
+np_p1: |-
+  当你创作一件创意作品（其中包括代码）时，该作品默认受排他性版权保护。除非你附上一份另作规定的许可证，否则任何其他人都不能复制、分发或修改你的作品，否则将面临下架、勒索或诉讼的风险。一旦作品有了其他贡献者（每个人都是版权持有者），「任何人」就开始把你也包括进去了。
+np_p2: |-
+  即便没有许可证文件，在某些情况下你也可能授予了一些权利——当你将源代码发布到一个要求接受服务条款的网站时。例如，如果你将源代码发布到 GitHub 上的公开仓库，你就已经接受了[服务条款](https://help.github.com/articles/github-terms-of-service)，并由此允许他人查看和复刻你的仓库。如果[版权的限制与例外](https://en.wikipedia.org/wiki/Limitations_and_exceptions_to_copyright)适用于他人的特定情况，他们也可能无需你的许可。无论是网站条款，还是特定司法管辖区的版权限制，都不足以支撑人们通常在公共代码托管平台上所寻求的那类协作，比如开源许可证所促成的试验、修改和分享。
+np_p3: |-
+  你无需做任何事就能*不*提供许可证。不过，你也许希望在一个显眼的位置（例如项目的 README）添加版权声明，并声明你不提供任何许可证，以免[用户](#for-users)误以为你是疏忽了。如果你打算接受他人对你这个无许可证项目的贡献，你或许可以和你的律师一起考虑为项目添加一份贡献者协议，这样即使你不授予相同的权利，也能保有来自贡献者的版权许可。
+np_p4: |-
+  禁止他人使用你的代码，未必是你所说的「无许可证」的本意。[开源许可证](/)允许他人重用你的代码，同时保留版权。如果你的目标是彻底放弃版权限制，请改用[公共领域贡献声明](/licenses/#unlicense)。
+np_forusers_heading: "致用户"
+np_forusers_p: |-
+  如果你发现某个软件没有许可证，这通常意味着你未获得该软件创作者的任何许可去使用、修改或分享该软件。尽管像 GitHub 这样的代码托管平台可能允许你查看和复刻代码，但这并不意味着你被允许出于任何目的使用、修改或分享该软件。
+np_options_intro: "你的选择："
+np_options_list: |-
+  - **礼貌地请求维护者添加许可证。**除非软件有强烈的相反迹象，否则缺少许可证很可能只是疏忽。如果软件托管在 GitHub 这样的网站上，请开一个 issue 请求添加许可证，并附上指向本站的链接。如果你比较大胆，而且哪种许可证最合适也相当明显，那就开一个 pull request 来添加许可证——参见本站每个许可证页面侧边栏中的「推荐此许可证」（例如 [MIT](/licenses/mit/#suggest-this-license)）。
+  - **不要使用该软件。**寻找或创建一个采用开源许可证的替代品。
+  - **协商一份私有许可证。**带上你的律师。
+
+# --- 非软件许可证（/non-software/）------------------------------------------
+ns_intro: |-
+  开源软件许可证同样可以用于非软件作品，并且往往是最佳选择，尤其是当相关作品可以像源代码一样被编辑和进行版本管理时。[选择一个开源许可证](/)。
+ns_data_heading: "数据、媒体等"
+ns_data_p: |-
+  [CC0-1.0](/licenses/cc0-1.0/)、[CC-BY-4.0](/licenses/cc-by-4.0/) 和 [CC-BY-SA-4.0](/licenses/cc-by-sa-4.0/) 都是[开放](https://opendefinition.org)许可证，用于从数据集到视频等各类非软件素材。请注意，知识共享组织[不建议将其许可证用于软件](https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software)或硬件。
+ns_doc_heading: "文档"
+ns_doc_p: |-
+  任何开源软件许可证或面向媒体的开放许可证（见[上文](#data-media-etc)）也适用于软件文档。如果你的软件及其文档使用不同的许可证，请务必声明文档中的源代码示例同样采用软件的许可证。
+ns_fonts_heading: "字体"
+ns_fonts_p: |-
+  [SIL Open Font License 1.1](/licenses/ofl-1.1/) 让字体保持开放，允许其在其他作品中被自由使用。
+ns_hardware_heading: "硬件"
+ns_hardware_p: |-
+  从家具到 [FPGA](https://oshwa.org/resources/best-practices-for-sharing-fpga-designs/) 等各类[开源硬件](https://oshwa.org/resources/open-source-hardware-definition/)的设计，可由 CERN Open Hardware 许可证涵盖：[CERN-OHL-P-2.0](/licenses/cern-ohl-p-2.0/)（宽松型）、[CERN-OHL-W-2.0](/licenses/cern-ohl-w-2.0/)（弱互惠型）和 [CERN-OHL-S-2.0](/licenses/cern-ohl-s-2.0/)（强互惠型）。
+ns_mixed_heading: "混合型项目"
+ns_mixed_p: |-
+  如果你的项目混合了不同类型的素材，你可以包含多个许可证，只要你明确说明每一部分适用哪个许可证即可。可参见[本站的许可证声明](https://github.com/github/choosealicense.com#license)作为示例。
+
+# --- 附录（/appendix/）------------------------------------------------------
+appendix_intro_p1: |-
+  以下是 [choosealicense.com 仓库](https://github.com/github/choosealicense.com)中描述的所有许可证的表格，供参考。
+appendix_intro_p2: |-
+  如果你来这里是为了选择许可证，**[请从首页开始](/)**，了解几个适用于大多数情况的许可证。
+appendix_col_license: "许可证"
+appendix_legend_heading: "图例"
+appendix_legend_permissions_html: |-
+  开源许可证向公众授予 <span class="license-permissions"><span class="license-marker">✓</span></span> <b>许可</b>，准许对被许可作品做一些版权或其他「知识产权」法律本可能禁止的事情。
+appendix_legend_conditions_html: |-
+  大多数开源许可证授予的许可，都以遵守一些 <span class="license-conditions"><span class="license-marker">ⓘ</span></span> <b>条件</b>为前提。
+appendix_legend_limitations_html: |-
+  大多数开源许可证还设有一些 <span class="license-limitations"><span class="license-marker">✕</span></span> <b>限制</b>，通常用以免除担保和责任，有时还明确将专利或商标排除在许可的授予之外。
+
+# --- 404 页面 ----------------------------------------------------------------
+notfound_p1: |-
+  抱歉！我们找不到你要查找的页面。
+notfound_p2: |-
+  如果你想查看某个许可证，请前往[许可证](/licenses)页面。
+
+# --- JavaScript 语言建议横幅（assets/js/i18n.js）---------------------------
+# banner_switch 的 %language% 是被建议语言的名称；banner_suggest 直接嵌入
+# 名称，以便每种语言自行控制其语法和大小写。
+banner_suggest: "本页面也提供中文版本。"
+banner_switch: "查看 %language% 版本"
+banner_dismiss: "忽略"
