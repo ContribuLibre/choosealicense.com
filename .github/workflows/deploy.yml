@@ -42,10 +42,11 @@ jobs:
           bundler-cache: true
 
       - name: Configure Pages
+        id: pages
         uses: actions/configure-pages@v5
 
       - name: Build with Jekyll
-        run: bundle exec jekyll build
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
           # Lets jekyll-github-metadata resolve repository data non-interactively.
