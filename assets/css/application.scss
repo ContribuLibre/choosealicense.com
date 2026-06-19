@@ -145,6 +145,9 @@ strong {
 
 .home h1 {
   font-size: 3.75rem;
+  /* Drop below the floated language selector so the home title stays full-width
+     and centered (the selector sits above it, top-right) instead of being crowded. */
+  clear: both;
 }
 
 .home h2 {
@@ -579,6 +582,207 @@ strong {
     background-size: 72px 182px;
   }
 
+}
+
+/* Top bar: breadcrumb on the leading side, the language cluster (suggestion +
+   selector) on the trailing side, all vertically centered on one row. */
+.topbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin-bottom: 12px;
+}
+
+.topbar > ol { margin: 0; }
+
+/* The cluster sits at the trailing edge (right in LTR, left in RTL) and keeps the
+   suggestion and the selector on a single, vertically centered row, so the
+   suggestion arrow lines up with the middle of the selector button. */
+.lang-cluster {
+  margin-inline-start: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Language selector — native <details> dropdown (works without JavaScript) */
+.language-selector {
+  position: relative;
+  font-size: 0.75rem;
+}
+
+.language-selector > summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background: #fff;
+  color: #444;
+  user-select: none;
+}
+
+.language-selector > summary::-webkit-details-marker { display: none; }
+.language-selector > summary::marker { content: ""; }
+
+.language-selector-icon svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.language-selector-caret { font-size: 0.7rem; }
+
+.language-menu {
+  position: absolute;
+  right: 0;
+  margin-top: 4px;
+  min-width: 170px;
+  max-height: 60vh;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  z-index: 1000003;
+  padding: 4px 0;
+}
+
+.language-menu li {
+  display: block;
+  margin: 0;
+}
+
+.language-menu a {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 6px 12px;
+  color: #444;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.language-menu a:hover,
+.language-menu a:focus {
+  background: #f0f0f0;
+  text-decoration: none;
+}
+
+.language-menu a[aria-current="true"] { font-weight: bold; }
+.language-menu .checkmark { color: #149ad4; }
+
+/* Language suggestion: a plain blue "switch to <lang>" text link shown beside the
+   selector by assets/js/i18n.js, followed by an arrow pointing at the selector,
+   when the browser's preferred language differs from the displayed one and no
+   choice has been stored yet. Floats just to the left of the selector (same row). */
+.language-suggestion {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+/* The class rule above outweighs the [hidden] UA rule, so the empty placeholder
+   would show before the script fills it; keep it hidden until then. */
+.language-suggestion[hidden] { display: none; }
+
+/* Mobile-first: show the short label by default and swap to the long sentence
+   once the viewport is wide enough. Both are in the link; CSS picks one. */
+.language-suggestion-long { display: none; }
+
+@media (min-width: 48rem) {
+  .language-suggestion-short { display: none; }
+  .language-suggestion-long { display: inline; }
+}
+
+/* Site links are bold by default, so bolding the language name alone would not
+   stand out. Drop the bold on this link only (without touching other links) and
+   keep just the language name bold, in the link colour, for contrast. */
+.language-suggestion-link { font-weight: normal; }
+.language-suggestion-link strong { color: inherit; font-weight: bold; }
+
+/* The link inherits the site's blue, hover-underlined link style. The arrow is a
+   separate element (outside the link) so the underline stays under the text only.
+   Its direction follows the page: → in LTR, ← in RTL (selector on the left). */
+.language-suggestion-arrow {
+  color: #149ad4;
+  font-weight: bold;
+}
+
+.language-suggestion-arrow::after { content: "→"; }
+[dir="rtl"] .language-suggestion-arrow::after { content: "←"; }
+
+@media (prefers-color-scheme: dark) {
+  .language-selector > summary {
+    background: #2a2a2a;
+    border-color: #555;
+    color: #dadada;
+  }
+
+  .language-menu {
+    background: #2a2a2a;
+    border-color: #555;
+  }
+
+  .language-menu a {
+    color: #dadada;
+  }
+
+  .language-menu a:hover,
+  .language-menu a:focus {
+    background: #3a3a3a;
+  }
+}
+
+/* Right-to-left languages (e.g. Arabic): mirror the floated layout. The default
+   layout uses physical floats/margins, so flip the main structural pieces here. */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .sidebar { float: left; }
+[dir="rtl"] .license-body { float: right; }
+[dir="rtl"] .license-overview-heading,
+[dir="rtl"] .license-details { float: right; }
+[dir="rtl"] .license-details { padding-left: 0; padding-right: 20px; }
+
+[dir="rtl"] .triptych li { float: right; margin-left: 0; margin-right: 27px; }
+[dir="rtl"] .triptych li:first-child { margin-right: 0; }
+
+[dir="rtl"] .site-footer nav { float: left; }
+[dir="rtl"] .site-footer p { float: right; }
+[dir="rtl"] .site-footer nav a { margin-left: 0; margin-right: 20px; }
+[dir="rtl"] .with-love { float: left; clear: left; }
+
+[dir="rtl"] .language-menu { right: auto; left: 0; }
+
+[dir="rtl"] th,
+[dir="rtl"] td { text-align: right; }
+
+[dir="rtl"] .license-rules li {
+  padding-left: 0;
+  padding-right: 18px;
+  margin-right: 0;
+  margin-left: 15px;
+}
+[dir="rtl"] .license-rules li .license-marker { left: auto; right: 0; }
+[dir="rtl"] .bullets > li { margin-left: 0; margin-right: 2em; }
+[dir="rtl"] .source-marker { margin-right: 0; margin-left: 4px; }
+
+[dir="rtl"] .home { text-align: center; }
+
+/* English / code / legal text stays left-to-right inside an RTL page. */
+[dir="rtl"] #license-text,
+[dir="rtl"] pre,
+[dir="rtl"] code {
+  direction: ltr;
+  text-align: left;
 }
 
 {% include css/responsive.css %}

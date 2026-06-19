@@ -1,12 +1,12 @@
 ---
-title: Non-Software Licenses
 layout: default
 permalink: /non-software/
+title: Non-Software Licenses
 ---
-
 Open source software licenses can be also used for non-software works and are often the best choice, especially when the works in question can be edited and versioned as source. [Choose an open source license](/).
 
 ### Data, media, etc.
+{: #data-media-etc }
 
 [CC0-1.0](/licenses/cc0-1.0/), [CC-BY-4.0](/licenses/cc-by-4.0/), and [CC-BY-SA-4.0](/licenses/cc-by-sa-4.0/) are [open](https://opendefinition.org) licenses used for non-software material ranging from datasets to videos. Note that Creative Commons does [not recommend its licenses be used for software](https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software) or hardware.
 

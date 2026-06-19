@@ -8,6 +8,12 @@ versions = JSON.parse(Net::HTTP.get(URI('https://pages.github.com/versions.json'
 
 gem 'github-pages', versions['github-pages']
 
+# Internationalization. Not on the GitHub Pages plugin whitelist, so the site is
+# built and deployed from GitHub Actions (.github/workflows/deploy.yml) rather than
+# by the native Pages build. ~> 1.5 keeps compatibility with the Jekyll version
+# pinned by the github-pages gem.
+gem 'jekyll-polyglot', '~> 1.5'
+
 # https://github.com/jekyll/jekyll/issues/8523
 gem 'webrick', '~> 1.7'
 
