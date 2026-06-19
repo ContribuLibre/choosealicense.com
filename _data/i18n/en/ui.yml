@@ -74,9 +74,6 @@ using_sentence_singular: "%projects% uses the %license%."
 # --- Page titles (rendered as <h1> and used in <title>/breadcrumbs) ----------
 page_title_home: "Choose an open source license"
 page_title_licenses: "Licenses"
-page_title_about: "What’s this about?"
-page_title_community: "Existing projects and communities"
-page_title_non_software: "Non-Software Licenses"
 page_title_appendix: "Appendix"
 page_title_404: "404 Not Found"
 
@@ -114,66 +111,7 @@ licenses_appendix_note_html: |-
 licenses_outro_html: |-
   The above licenses represent the entire spectrum of open source licenses, from highly protective to unconditional. One of these should work for most new open source projects. Many other open source licenses exist, including older versions of and close substitutes for some of the above. See the resources listed on our <a href="/about/">about page</a> if you’d like to read more.
 
-# --- About page (/about/) ----------------------------------------------------
-about_intro: |-
-  GitHub wants to help developers choose an open source license for their source code.
-
   If you already know what you’re doing and have a license you prefer to use, that’s great! We’re not here to change your mind. But if you are bewildered by the large number of choices, maybe we can help.
-about_not_comprehensive_heading: "Not comprehensive"
-about_not_comprehensive_p1: |-
-  This site is not a comprehensive directory of open source licenses. The vast majority of projects will likely be well served by one of the three options highlighted on the [homepage](/) — choosing the license [preferred](/community/) by projects similar to yours, or the most popular permissive license ([MIT](/licenses/mit/)), or the most popular copyleft license ([GNU GPLv3](/licenses/gpl-3.0/)). Just in case you have specific needs not covered by these, we also highlight a [few other licenses to consider](/licenses/) and have a page about [licenses for non-software projects](/non-software/).
-about_not_comprehensive_p2: |-
-  See our [appendix](/appendix/) for a table of every license cataloged in the [choosealicense.com repository](https://github.com/github/choosealicense.com) and the links below for *even more* licenses that you **do not** need to learn about to still choose a great license for your project.
-about_resources_heading: "Additional resources"
-about_resources_list: |-
-  * Open Source Initiative's FAQ on [Which Open Source license should I choose to release my software under?](https://opensource.org/faq#which-license)
-  * Free Software Foundation's [advice on how to choose a license](https://www.gnu.org/licenses/license-recommendations.html)
-  * [Joinup Licensing Assistant](https://joinup.ec.europa.eu/collection/eupl/joinup-licensing-assistant-jla), an interactive license chooser from the European Commission
-  * [The Legal Side of Open Source](https://opensource.guide/legal/), an Open Source Guide covering licensing and related issues
-about_improve_heading: "Help us improve it"
-about_improve_p: |-
-  Choosealicense.com isn’t just about open source; the site itself is open source as well. See something you think could be done better? Feel free to [fork the project](https://github.com/github/choosealicense.com) on GitHub and submit a pull request. We welcome your improvements.
-about_disclaimer_heading: "Disclaimer"
-about_disclaimer_p: |-
-  We are not lawyers. Well, most of us anyway. It is not the goal of this site to provide legal advice. The goal of this site is to provide a starting point to help you make an informed choice by providing information on popular open source licenses in a simplified fashion. If you have any questions regarding the best license for your code or any other legal issues relating to it, it’s your responsibility to do further research or consult with a professional.
-
-# --- Existing projects and communities (/community/) ------------------------
-comm_p1: |-
-  If you’re contributing to or extending an existing project, it’s almost always easiest to continue using that project’s license. To find its license, look for a file called `LICENSE` or `COPYING`, and skim the project’s `README`. If you can’t find a license, [ask the maintainers](/no-permission/#for-users).
-comm_p2: |-
-  Depending on the original project’s license, using the same license might be a requirement, not just the easiest thing to do. (See the "same license" condition of [some licenses](/licenses/).)
-comm_p3: |-
-  Some communities have strong preferences for particular licenses. If you want to participate in one of these, it will be easier to use their preferred license, even if you’re starting a brand new project with no existing dependencies. Some examples include:
-comm_list: |-
-  * [Apache](https://www.apache.org/licenses/) requires [Apache License 2.0](/licenses/apache-2.0/)
-  * [Cloud Native Computing Foundation](https://github.com/cncf/foundation/blob/main/charter.md#11-ip-policy) requires [Apache License 2.0](/licenses/apache-2.0/)
-  * [GNU](https://www.gnu.org/licenses/license-recommendations.html) recommends [GNU GPLv3](/licenses/gpl-3.0/) for most programs
-  * [npm packages](https://libraries.io/search?platforms=npm) overwhelmingly use the [MIT](/licenses/mit/) or the very similar [ISC](/licenses/isc) licenses
-  * [OpenBSD](https://www.openbsd.org/policy.html) prefers the [ISC License](/licenses/isc/)
-  * [Rust](https://rust-lang.github.io/api-guidelines/necessities.html#crate-and-its-dependencies-have-a-permissive-license-c-permissive) crates are overwhelmingly licensed [MIT](/licenses/mit/) [`OR`](https://spdx.github.io/spdx-spec/v2.3/SPDX-license-expressions/#d42-disjunctive-or-operator) [Apache License 2.0](/licenses/apache-2.0/)
-  * [WordPress](https://wordpress.org/about/license/) plugins and themes must be [GNU GPLv2](/licenses/gpl-2.0/) (or later)
-  * [Joomla](https://tm.joomla.org/joomla-license-faq.html#can-i-release-an-extension-under-a-non-gpl-license) extensions and templates must be [GNU GPLv2](/licenses/gpl-2.0/) for the PHP code.
-comm_p4: |-
-  Communities come in all shapes and sizes, and more than one community might be pertinent (e.g., keep in mind [your company](https://opensource.guide/legal/#what-does-my-companys-legal-team-need-to-know) if you work for one). The examples above are *very* well established. If the community you’re building a project for doesn’t have set-in-stone licensing traditions, or you don’t see your project as part of any particular community, that’s fine: [make your own choice of an open source license](/).
-
-# --- Non-Software Licenses (/non-software/) ----------------------------------
-ns_intro: |-
-  Open source software licenses can be also used for non-software works and are often the best choice, especially when the works in question can be edited and versioned as source. [Choose an open source license](/).
-ns_data_heading: "Data, media, etc."
-ns_data_p: |-
-  [CC0-1.0](/licenses/cc0-1.0/), [CC-BY-4.0](/licenses/cc-by-4.0/), and [CC-BY-SA-4.0](/licenses/cc-by-sa-4.0/) are [open](https://opendefinition.org) licenses used for non-software material ranging from datasets to videos. Note that Creative Commons does [not recommend its licenses be used for software](https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software) or hardware.
-ns_doc_heading: "Documentation"
-ns_doc_p: |-
-  Any open source software license or open license for media (see [above](#data-media-etc)) also applies to software documentation. If you use different licenses for your software and its documentation, be sure to specify that source code examples in the documentation are also licensed under the software license.
-ns_fonts_heading: "Fonts"
-ns_fonts_p: |-
-  The [SIL Open Font License 1.1](/licenses/ofl-1.1/) keeps fonts open, allowing them to be freely used in other works.
-ns_hardware_heading: "Hardware"
-ns_hardware_p: |-
-  Designs for [open source hardware](https://oshwa.org/resources/open-source-hardware-definition/) ranging from furniture to [FPGAs](https://oshwa.org/resources/best-practices-for-sharing-fpga-designs/) are covered by CERN Open Hardware licenses: [CERN-OHL-P-2.0](/licenses/cern-ohl-p-2.0/) (permissive), [CERN-OHL-W-2.0](/licenses/cern-ohl-w-2.0/) (weakly reciprocal), and [CERN-OHL-S-2.0](/licenses/cern-ohl-s-2.0/) (strongly reciprocal).
-ns_mixed_heading: "Mixed projects"
-ns_mixed_p: |-
-  If your project contains a mix of different types of material, you can include multiple licenses, as long as you are explicit about which license applies to each part of the project. See [the license notice for this site](https://github.com/github/choosealicense.com#license) as an example.
 
 # --- Appendix (/appendix/) ---------------------------------------------------
 appendix_intro_p1: |-

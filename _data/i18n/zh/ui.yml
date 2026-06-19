@@ -66,9 +66,6 @@ using_sentence_singular: "%projects% 使用 %license%。"
 # --- 页面标题 ----------------------------------------------------------------
 page_title_home: "选择一个开源许可证"
 page_title_licenses: "许可证"
-page_title_about: "这是关于什么的？"
-page_title_community: "现有的项目与社区"
-page_title_non_software: "非软件许可证"
 page_title_appendix: "附录"
 page_title_404: "404 未找到"
 
@@ -106,66 +103,7 @@ licenses_appendix_note_html: |-
 licenses_outro_html: |-
   上述许可证代表了开源许可证的整个区间，从高度保护性到完全无条件。其中之一应当适用于大多数新的开源项目。还存在许多其他开源许可证，包括上述某些许可证的旧版本和相近替代品。如果你想进一步了解，请查阅我们<a href="/about/">关于页面</a>所列出的资源。
 
-# --- 关于页面（/about/）-----------------------------------------------------
-about_intro: |-
-  GitHub 希望帮助开发者为他们的源代码选择一个开源许可证。
-
   如果你已经心中有数，并且有偏好使用的许可证，那很好！我们无意改变你的想法。但如果你被众多的选择弄得不知所措，也许我们能帮上忙。
-about_not_comprehensive_heading: "并不全面"
-about_not_comprehensive_p1: |-
-  本站并非开源许可证的完整目录。绝大多数项目很可能都能由[首页](/)上重点推荐的三个选项很好地满足——选择与你类似的项目所[偏好](/community/)的许可证、最受欢迎的宽松许可证（[MIT](/licenses/mit/)）、或最受欢迎的 copyleft 许可证（[GNU GPLv3](/licenses/gpl-3.0/)）。万一你有这些选项未能覆盖的特定需求，我们也重点介绍了[另外几个值得考虑的许可证](/licenses/)，并设有一个关于[非软件项目许可证](/non-software/)的页面。
-about_not_comprehensive_p2: |-
-  请查阅我们的[附录](/appendix/)，那里有一张表格收录了 [choosealicense.com 仓库](https://github.com/github/choosealicense.com)中编目的所有许可证；并参阅下方的链接，那里有*更多*许可证——你**无需**了解它们也能为你的项目选到一个很好的许可证。
-about_resources_heading: "更多资源"
-about_resources_list: |-
-  * 开源促进会（OSI）的常见问题解答：[我应该选择哪种开源许可证来发布我的软件？](https://opensource.org/faq#which-license)
-  * 自由软件基金会（FSF）关于[如何选择许可证的建议](https://www.gnu.org/licenses/license-recommendations.html)
-  * [Joinup Licensing Assistant](https://joinup.ec.europa.eu/collection/eupl/joinup-licensing-assistant-jla)，欧盟委员会提供的交互式许可证选择器
-  * [The Legal Side of Open Source](https://opensource.guide/legal/)，一份涵盖许可与相关问题的开源指南
-about_improve_heading: "帮助我们改进它"
-about_improve_p: |-
-  Choosealicense.com 不仅仅是在谈论开源；本站本身也是开源的。看到了你觉得可以做得更好的地方？欢迎在 GitHub 上[复刻本项目](https://github.com/github/choosealicense.com)并提交 pull request。我们欢迎你的改进。
-about_disclaimer_heading: "免责声明"
-about_disclaimer_p: |-
-  我们不是律师。好吧，至少我们大多数人不是。本站的目标并非提供法律建议。本站的目标是提供一个起点，通过以简化的方式介绍热门开源许可证的信息，帮助你做出明智的选择。如果你对哪种许可证最适合你的代码，或对与之相关的任何其他法律问题有疑问，那么进一步研究或咨询专业人士是你自己的责任。
-
-# --- 现有的项目与社区（/community/）-----------------------------------------
-comm_p1: |-
-  如果你正在为某个现有项目做贡献或对其进行扩展，那么继续使用该项目的许可证几乎总是最简单的做法。要找到它的许可证，请查找名为 `LICENSE` 或 `COPYING` 的文件，并浏览项目的 `README`。如果你找不到许可证，请[询问维护者](/no-permission/#for-users)。
-comm_p2: |-
-  取决于原项目的许可证，使用相同的许可证可能不只是最简单的做法，而是一项要求。（参见[某些许可证](/licenses/)的「相同许可证」条件。）
-comm_p3: |-
-  有些社区对特定许可证有强烈的偏好。如果你想参与其中之一，那么使用其偏好的许可证会更方便，即便你是在没有任何现有依赖的情况下开始一个全新的项目。一些例子包括：
-comm_list: |-
-  * [Apache](https://www.apache.org/licenses/) 要求使用 [Apache License 2.0](/licenses/apache-2.0/)
-  * [云原生计算基金会（CNCF）](https://github.com/cncf/foundation/blob/main/charter.md#11-ip-policy)要求使用 [Apache License 2.0](/licenses/apache-2.0/)
-  * [GNU](https://www.gnu.org/licenses/license-recommendations.html) 建议大多数程序使用 [GNU GPLv3](/licenses/gpl-3.0/)
-  * [npm 包](https://libraries.io/search?platforms=npm)绝大多数使用 [MIT](/licenses/mit/) 或与之非常相似的 [ISC](/licenses/isc) 许可证
-  * [OpenBSD](https://www.openbsd.org/policy.html) 偏好 [ISC 许可证](/licenses/isc/)
-  * [Rust](https://rust-lang.github.io/api-guidelines/necessities.html#crate-and-its-dependencies-have-a-permissive-license-c-permissive) crate 绝大多数以 [MIT](/licenses/mit/) [`OR`](https://spdx.github.io/spdx-spec/v2.3/SPDX-license-expressions/#d42-disjunctive-or-operator) [Apache License 2.0](/licenses/apache-2.0/) 授权
-  * [WordPress](https://wordpress.org/about/license/) 插件和主题必须采用 [GNU GPLv2](/licenses/gpl-2.0/)（或更高版本）
-  * [Joomla](https://tm.joomla.org/joomla-license-faq.html#can-i-release-an-extension-under-a-non-gpl-license) 扩展和模板的 PHP 代码必须采用 [GNU GPLv2](/licenses/gpl-2.0/)。
-comm_p4: |-
-  社区形形色色、规模各异，而且可能不止一个社区与你相关（例如，如果你受雇于某家公司，请记得考虑[你的公司](https://opensource.guide/legal/#what-does-my-companys-legal-team-need-to-know)）。上面的例子都是*非常*成熟确立的。如果你正在构建项目的那个社区并没有一成不变的许可惯例，或者你并不认为你的项目属于任何特定社区，那也没关系：[自行做出你的开源许可证选择](/)。
-
-# --- 非软件许可证（/non-software/）------------------------------------------
-ns_intro: |-
-  开源软件许可证同样可以用于非软件作品，并且往往是最佳选择，尤其是当相关作品可以像源代码一样被编辑和进行版本管理时。[选择一个开源许可证](/)。
-ns_data_heading: "数据、媒体等"
-ns_data_p: |-
-  [CC0-1.0](/licenses/cc0-1.0/)、[CC-BY-4.0](/licenses/cc-by-4.0/) 和 [CC-BY-SA-4.0](/licenses/cc-by-sa-4.0/) 都是[开放](https://opendefinition.org)许可证，用于从数据集到视频等各类非软件素材。请注意，知识共享组织[不建议将其许可证用于软件](https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software)或硬件。
-ns_doc_heading: "文档"
-ns_doc_p: |-
-  任何开源软件许可证或面向媒体的开放许可证（见[上文](#data-media-etc)）也适用于软件文档。如果你的软件及其文档使用不同的许可证，请务必声明文档中的源代码示例同样采用软件的许可证。
-ns_fonts_heading: "字体"
-ns_fonts_p: |-
-  [SIL Open Font License 1.1](/licenses/ofl-1.1/) 让字体保持开放，允许其在其他作品中被自由使用。
-ns_hardware_heading: "硬件"
-ns_hardware_p: |-
-  从家具到 [FPGA](https://oshwa.org/resources/best-practices-for-sharing-fpga-designs/) 等各类[开源硬件](https://oshwa.org/resources/open-source-hardware-definition/)的设计，可由 CERN Open Hardware 许可证涵盖：[CERN-OHL-P-2.0](/licenses/cern-ohl-p-2.0/)（宽松型）、[CERN-OHL-W-2.0](/licenses/cern-ohl-w-2.0/)（弱互惠型）和 [CERN-OHL-S-2.0](/licenses/cern-ohl-s-2.0/)（强互惠型）。
-ns_mixed_heading: "混合型项目"
-ns_mixed_p: |-
-  如果你的项目混合了不同类型的素材，你可以包含多个许可证，只要你明确说明每一部分适用哪个许可证即可。可参见[本站的许可证声明](https://github.com/github/choosealicense.com#license)作为示例。
 
 # --- 附录（/appendix/）------------------------------------------------------
 appendix_intro_p1: |-

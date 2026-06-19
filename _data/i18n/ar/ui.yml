@@ -68,9 +68,6 @@ using_sentence_singular: "يستخدم %projects% ترخيص %license%."
 # --- عناوين الصفحات ----------------------------------------------------------
 page_title_home: "اختر ترخيصًا مفتوح المصدر"
 page_title_licenses: "التراخيص"
-page_title_about: "ما هذا الموقع؟"
-page_title_community: "المشاريع والمجتمعات القائمة"
-page_title_non_software: "تراخيص لغير البرمجيات"
 page_title_appendix: "الملحق"
 page_title_404: "404 الصفحة غير موجودة"
 
@@ -108,66 +105,7 @@ licenses_appendix_note_html: |-
 licenses_outro_html: |-
   تمثّل التراخيص أعلاه الطيف الكامل للتراخيص مفتوحة المصدر، من الأشد حمايةً إلى غير المشروطة. ومن المفترض أن يناسب أحدها معظم المشاريع الجديدة مفتوحة المصدر. وتوجد تراخيص أخرى كثيرة مفتوحة المصدر، بما في ذلك إصدارات أقدم وبدائل قريبة من بعض ما سبق. راجع المصادر المدرجة في <a href="/about/">صفحة «حول»</a> إن أردت قراءة المزيد.
 
-# --- صفحة «حول» (/about/) ----------------------------------------------------
-about_intro: |-
-  يريد GitHub مساعدة المطوّرين على اختيار ترخيص مفتوح المصدر لشيفرتهم المصدرية.
-
   إذا كنت تعرف بالفعل ما تفعله ولديك ترخيص تفضّل استخدامه، فهذا رائع! لسنا هنا لتغيير رأيك. لكن إذا حيّرك العدد الكبير من الخيارات، فربما يمكننا مساعدتك.
-about_not_comprehensive_heading: "ليست شاملة"
-about_not_comprehensive_p1: |-
-  هذا الموقع ليس دليلًا شاملًا للتراخيص مفتوحة المصدر. فالغالبية العظمى من المشاريع ستُخدَم على الأرجح بأحد الخيارات الثلاثة المعروضة في [الصفحة الرئيسية](/) — اختيار الترخيص [المفضّل](/community/) لدى مشاريع شبيهة بمشروعك، أو أشهر ترخيص متساهل ([MIT](/licenses/mit/))، أو أشهر ترخيص حقوق متروكة ([GNU GPLv3](/licenses/gpl-3.0/)). وتحسّبًا لاحتياجات خاصة لا تغطّيها هذه الخيارات، نعرض أيضًا [بضعة تراخيص أخرى للنظر فيها](/licenses/) ولدينا صفحة عن [تراخيص المشاريع غير البرمجية](/non-software/).
-about_not_comprehensive_p2: |-
-  راجع [الملحق](/appendix/) لجدول بكل ترخيص مفهرس في [مستودع choosealicense.com](https://github.com/github/choosealicense.com)، والروابط أدناه لـ*مزيد* من التراخيص التي **لا تحتاج** إلى معرفتها لتظل قادرًا على اختيار ترخيص ممتاز لمشروعك.
-about_resources_heading: "مصادر إضافية"
-about_resources_list: |-
-  * الأسئلة الشائعة لمبادرة المصدر المفتوح حول [أيُّ ترخيص مفتوح المصدر ينبغي أن أختاره لإصدار برمجياتي؟](https://opensource.org/faq#which-license)
-  * [نصيحة مؤسسة البرمجيات الحرة حول كيفية اختيار ترخيص](https://www.gnu.org/licenses/license-recommendations.html)
-  * [Joinup Licensing Assistant](https://joinup.ec.europa.eu/collection/eupl/joinup-licensing-assistant-jla)، أداة تفاعلية لاختيار الترخيص من المفوضية الأوروبية
-  * [The Legal Side of Open Source](https://opensource.guide/legal/)، دليل مصدر مفتوح يغطّي الترخيص والمسائل المتصلة به
-about_improve_heading: "ساعدنا على تحسينه"
-about_improve_p: |-
-  لا يقتصر choosealicense.com على المصدر المفتوح؛ فالموقع نفسه مفتوح المصدر كذلك. أرأيت شيئًا تعتقد أنه يمكن تحسينه؟ لا تتردد في [عمل نسخة معدّلة (fork) للمشروع](https://github.com/github/choosealicense.com) على GitHub وتقديم طلب سحب (pull request). نرحّب بتحسيناتك.
-about_disclaimer_heading: "إخلاء مسؤولية"
-about_disclaimer_p: |-
-  نحن لسنا محامين. حسنًا، معظمنا على أي حال. ليس هدف هذا الموقع تقديم استشارة قانونية. هدفه أن يوفّر نقطة انطلاق تساعدك على اتخاذ قرار مستنير، بتقديم معلومات عن التراخيص الشائعة مفتوحة المصدر بأسلوب مبسّط. إذا كانت لديك أي أسئلة بخصوص أفضل ترخيص لشيفرتك أو أي مسائل قانونية أخرى متعلقة بها، فمن مسؤوليتك إجراء مزيد من البحث أو استشارة مختص.
-
-# --- المشاريع والمجتمعات القائمة (/community/) -------------------------------
-comm_p1: |-
-  إذا كنت تساهم في مشروع قائم أو توسّعه، فإن الأسهل دائمًا تقريبًا الاستمرار في استخدام ترخيص ذلك المشروع. للعثور على ترخيصه، ابحث عن ملف باسم `LICENSE` أو `COPYING`، وتصفّح ملف `README` للمشروع. وإن لم تجد ترخيصًا، [اسأل القائمين عليه](/no-permission/#for-users).
-comm_p2: |-
-  تبعًا لترخيص المشروع الأصلي، قد يكون استخدام الترخيص نفسه متطلَّبًا لا مجرد الحل الأسهل. (راجع شرط «الترخيص نفسه» في [بعض التراخيص](/licenses/).)
-comm_p3: |-
-  لدى بعض المجتمعات تفضيلات قوية لتراخيص بعينها. وإذا أردت المشاركة في أحدها، فسيكون من الأسهل استخدام ترخيصها المفضّل، حتى لو كنت تبدأ مشروعًا جديدًا تمامًا بلا تبعيات قائمة. ومن الأمثلة على ذلك:
-comm_list: |-
-  * [Apache](https://www.apache.org/licenses/) تتطلب [Apache License 2.0](/licenses/apache-2.0/)
-  * [Cloud Native Computing Foundation](https://github.com/cncf/foundation/blob/main/charter.md#11-ip-policy) تتطلب [Apache License 2.0](/licenses/apache-2.0/)
-  * [GNU](https://www.gnu.org/licenses/license-recommendations.html) توصي بـ[GNU GPLv3](/licenses/gpl-3.0/) لمعظم البرامج
-  * [حزم npm](https://libraries.io/search?platforms=npm) تستخدم على نحو ساحق ترخيص [MIT](/licenses/mit/) أو ترخيص [ISC](/licenses/isc) المماثل جدًا
-  * [OpenBSD](https://www.openbsd.org/policy.html) يفضّل [ترخيص ISC](/licenses/isc/)
-  * صناديق [Rust](https://rust-lang.github.io/api-guidelines/necessities.html#crate-and-its-dependencies-have-a-permissive-license-c-permissive) مرخّصة على نحو ساحق بـ[MIT](/licenses/mit/) [`OR`](https://spdx.github.io/spdx-spec/v2.3/SPDX-license-expressions/#d42-disjunctive-or-operator) [Apache License 2.0](/licenses/apache-2.0/)
-  * إضافات وقوالب [WordPress](https://wordpress.org/about/license/) يجب أن تكون بترخيص [GNU GPLv2](/licenses/gpl-2.0/) (أو أحدث)
-  * إضافات وقوالب [Joomla](https://tm.joomla.org/joomla-license-faq.html#can-i-release-an-extension-under-a-non-gpl-license) يجب أن تكون بترخيص [GNU GPLv2](/licenses/gpl-2.0/) لشيفرة PHP.
-comm_p4: |-
-  تأتي المجتمعات بأشكال وأحجام متنوّعة، وقد يكون أكثر من مجتمع وثيق الصلة (مثلًا، ضع في حسبانك [شركتك](https://opensource.guide/legal/#what-does-my-companys-legal-team-need-to-know) إن كنت تعمل لدى واحدة). الأمثلة أعلاه راسخة *جدًا*. وإذا لم يكن للمجتمع الذي تبني له مشروعًا تقاليد ترخيص ثابتة، أو إن كنت لا ترى مشروعك جزءًا من أي مجتمع بعينه، فلا بأس بذلك: [اتخذ قرارك الخاص باختيار ترخيص مفتوح المصدر](/).
-
-# --- تراخيص لغير البرمجيات (/non-software/) ----------------------------------
-ns_intro: |-
-  يمكن استخدام تراخيص البرمجيات مفتوحة المصدر أيضًا للأعمال غير البرمجية، وكثيرًا ما تكون الخيار الأفضل، خصوصًا عندما يمكن تحرير الأعمال المعنية وإصدار نسخ منها كمصدر. [اختر ترخيصًا مفتوح المصدر](/).
-ns_data_heading: "البيانات والوسائط وغيرها"
-ns_data_p: |-
-  [CC0-1.0](/licenses/cc0-1.0/) و[CC-BY-4.0](/licenses/cc-by-4.0/) و[CC-BY-SA-4.0](/licenses/cc-by-sa-4.0/) تراخيص [مفتوحة](https://opendefinition.org) تُستخدم لمواد غير برمجية تتراوح من مجموعات البيانات إلى مقاطع الفيديو. لاحظ أن المشاع الإبداعي [لا يوصي باستخدام تراخيصه للبرمجيات](https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software) أو العتاد.
-ns_doc_heading: "التوثيق"
-ns_doc_p: |-
-  أي ترخيص برمجيات مفتوح المصدر أو ترخيص مفتوح للوسائط (انظر [أعلاه](#data-media-etc)) ينطبق أيضًا على توثيق البرمجيات. وإذا استخدمت تراخيص مختلفة لبرمجياتك وتوثيقها، فاحرص على توضيح أن أمثلة الشيفرة المصدرية في التوثيق مرخّصة أيضًا بموجب ترخيص البرمجيات.
-ns_fonts_heading: "الخطوط"
-ns_fonts_p: |-
-  يُبقي [SIL Open Font License 1.1](/licenses/ofl-1.1/) الخطوط مفتوحة، بما يتيح استخدامها بحرية في أعمال أخرى.
-ns_hardware_heading: "العتاد"
-ns_hardware_p: |-
-  تصاميم [العتاد مفتوح المصدر](https://oshwa.org/resources/open-source-hardware-definition/) التي تتراوح من الأثاث إلى [مصفوفات البوابات القابلة للبرمجة (FPGA)](https://oshwa.org/resources/best-practices-for-sharing-fpga-designs/) تغطّيها تراخيص CERN Open Hardware: [CERN-OHL-P-2.0](/licenses/cern-ohl-p-2.0/) (متساهلة) و[CERN-OHL-W-2.0](/licenses/cern-ohl-w-2.0/) (تبادلية ضعيفة) و[CERN-OHL-S-2.0](/licenses/cern-ohl-s-2.0/) (تبادلية قوية).
-ns_mixed_heading: "المشاريع المختلطة"
-ns_mixed_p: |-
-  إذا كان مشروعك يضم مزيجًا من أنواع مختلفة من المواد، فيمكنك تضمين عدة تراخيص، ما دمت تحدّد بوضوح أيّ ترخيص ينطبق على كل جزء من المشروع. انظر [إشعار الترخيص الخاص بهذا الموقع](https://github.com/github/choosealicense.com#license) كمثال.
 
 # --- الملحق (/appendix/) -----------------------------------------------------
 appendix_intro_p1: |-
