@@ -19,7 +19,8 @@ task :test do
                               url_swap: { %r{https://choosealicense.com} => '' },
                               url_ignore: [%r{https://github.com/github/choosealicense.com/edit/gh-pages/_licenses/},
                                            %r{https://help.github.com},
-                                           %r{https://opensource.org}],
+                                           %r{https://opensource.org},
+                                           %r{https://git.savannah.gnu.org}],
                               hydra: { max_concurrency: 10 },
                               check_img_http: true).run
 end

@@ -40,21 +40,30 @@ class Choosealicense {
   // Init tooltip action
   initTooltips() {
     const annotations = window.annotations || {};
+    // Localized, reorderable tooltip template (see _data/i18n/<lang>/ui.yml).
+    // Falls back to the English word order if the page didn't provide them.
+    const format = window.tooltipFormat || '%label% %category%: %description%';
+    const categories = window.tooltipCategory || {};
 
     Object.entries(annotations).forEach(([ruletype, rules]) => {
-      rules.forEach((rule) => {
-        const tooltipAttr = TOOLTIP_ATTRIBUTES_BY_RULE[ruletype];
-        if (!tooltipAttr) return;
+      const tooltipAttr = TOOLTIP_ATTRIBUTES_BY_RULE[ruletype];
+      if (!tooltipAttr) return;
 
+      const category = categories[ruletype] || tooltipAttr.heading.toLowerCase();
+
+      rules.forEach((rule) => {
         const elements = Array.from(
           document.querySelectorAll(`.license-${ruletype} .${rule.tag}`)
         ).filter((el) => !el.closest(`dd.license-${ruletype}`));
 
+        // Function replacers avoid `$` being treated as a special pattern.
+        const ariaLabel = format
+          .replace('%category%', () => category)
+          .replace('%label%', () => rule.label)
+          .replace('%description%', () => rule.description);
+
         elements.forEach((el) => {
-          el.setAttribute(
-            'aria-label',
-            `${rule.label} ${tooltipAttr.heading.toLowerCase()}: ${rule.description}`
-          );
+          el.setAttribute('aria-label', ariaLabel);
           el.classList.add(...TOOLTIP_CLASSES, tooltipAttr.color);
         });
       });
@@ -82,7 +91,7 @@ class Choosealicense {
 
         this.copyText(textToCopy)
           .then(() => {
-            button.textContent = 'Copied!';
+            button.textContent = button.dataset.copiedLabel || 'Copied!';
           })
           .catch(() => {
             // If copying fails, leave the prompt unchanged.
