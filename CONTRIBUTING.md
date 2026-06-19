@@ -42,8 +42,9 @@ how it works and how to add a language. Two things to keep in mind:
 
 * The **legal text of a license is never translated** — only its non-legal summary
   (`description`/`how`/`note`) is.
-* Translations are data overlays that fall back to English, so partial
-  translations are welcome and never break the site.
+* Untranslated text falls back to English, so partial translations are welcome and
+  never break the site. Community translation runs through Weblate — see
+  [WEBLATE.md](WEBLATE.md).
 
 ## Making changes
 

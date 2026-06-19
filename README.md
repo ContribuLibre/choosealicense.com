@@ -22,7 +22,8 @@ Actions (see [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)).
 
 The interface and the non-legal license *summaries* are translatable; the **legal
 text of each license is never translated**. See [TRANSLATING.md](TRANSLATING.md) to
-add or update a translation (it's plain YAML, ready for Weblate).
+add or update a translation (keyed YAML plus a Markdown file per prose page);
+for community translation via Weblate, see [WEBLATE.md](WEBLATE.md).
 
 ## Run it on your machine
 

@@ -1,89 +1,111 @@
 # Translating choosealicense.com
 
 The site can be displayed in several languages. The default language (English)
-lives at the site root (e.g. `/licenses/mit/`); every other language is generated
-from the **same source files** under its own prefix (e.g. `/fr/licenses/mit/`) by
-[jekyll-polyglot](https://github.com/untra/polyglot). There is **no per-language
-copy of any page or license** — translations are data overlays, and anything that
-isn't translated yet automatically falls back to English. A partial translation
+lives at the site root (e.g. `/licenses/mit/`); every other language is served
+under its own prefix (e.g. `/fr/licenses/mit/`) by
+[jekyll-polyglot](https://github.com/untra/polyglot). Anything that isn't
+translated yet **automatically falls back to English**, so a partial translation
 never breaks the build.
 
-## Three things, three different skill sets
+**The legally meaningful text of a license is never translated** (see below).
 
-Translation is split deliberately so the right people work on the right parts, and
-so that **legally meaningful text is never translated**.
+## What gets translated, and where
 
-| Tier | What | Where | Who |
-|------|------|-------|-----|
-| 1. **Interface** | Buttons, menus, headings, page prose, rule labels | `_data/i18n/<lang>/ui.yml` and `_data/i18n/<lang>/rules.yml` | Anyone fluent in the language |
-| 2. **License summaries** (no legal value) | The `description` / `how` / `note` shown *about* a license | `_data/i18n/<lang>/licenses.yml` | Someone comfortable with licensing concepts |
-| 3. **License legal text** | The body of `_licenses/*.txt` | — | **Nobody — never translated** |
+| What | Where | Who |
+|------|-------|-----|
+| **Interface** — buttons, menus, headings, rule labels, the home page sections | `_data/i18n/<lang>/ui.yml` and `_data/i18n/<lang>/rules.yml` (keyed strings) | Anyone fluent in the language |
+| **Prose pages** — About, Community, No License, Non-Software | a per-language Markdown file, e.g. `about.fr.md` | Anyone fluent in the language |
+| **License summaries** (no legal value) — the `description` / `how` / `note` shown *about* a license | `_data/i18n/<lang>/licenses.yml` | Someone comfortable with licensing concepts |
+| **License legal text** — the body of `_licenses/*.txt` | — | **Nobody — never translated** |
 
-Why tier 3 is off-limits: a license's operative text is the English (or official)
-version. Some licenses have official or semi-official translations with their own
-status, and downstream tooling such as [licensee](https://github.com/licensee/licensee)
-keys off the canonical text. Translating it here would be misleading and could have
-legal consequences, so the legal text is always shown as-is.
+There are two kinds of source on purpose: short, reused strings (and the
+data-driven home page and appendix) are **keys** in `ui.yml`, where per-string
+tracking helps; whole prose pages are **per-language Markdown files**, where a
+translator can edit one readable file and restructure the prose to read naturally
+in their language.
 
-## How the files fit together
+### Why the legal text is off-limits
+
+A license's operative text is the English (or official) version. Some licenses have
+official or semi-official translations with their own status, and downstream tooling
+such as [licensee](https://github.com/licensee/licensee) keys off the canonical
+text. Translating it here would be misleading and could have legal consequences, so
+the legal text is always shown as-is.
+
+## English is the single source of truth
+
+* **UI strings:** `_data/i18n/en/ui.yml`
+* **Rule labels:** `_data/rules.yml`
+* **License summaries:** each license's front matter in `_licenses/*.txt`
+* **Prose pages:** the un-suffixed file (e.g. `about.md`)
+
+Nothing English is duplicated per language. Other languages only provide what they
+translate; everything else falls back to English.
+
+## Adding or updating a translation
+
+### Interface, rule labels, license summaries (YAML)
+
+Edit (or create) `_data/i18n/<lang>/ui.yml`, and optionally
+`_data/i18n/<lang>/rules.yml` and `_data/i18n/<lang>/licenses.yml`. These are flat,
+monolingual YAML — see [WEBLATE.md](WEBLATE.md) to do it through Weblate.
+
+### A prose page (one Markdown file per language)
+
+Copy the English page and translate it:
 
 ```
-_data/i18n/
-  en/ui.yml          # English UI + page prose — the canonical source / base file
-  fr/ui.yml          # French UI + page prose
-  fr/licenses.yml    # French license summaries  (English = the _licenses/*.txt front matter)
-  fr/rules.yml       # French rule labels        (English = _data/rules.yml)
+cp about.md about.<lang>.md
 ```
 
-English is the source of truth: UI strings live in `en/ui.yml`, license summaries
-live in each license's front matter, and rule labels live in `_data/rules.yml`.
-Other languages only need to provide what they translate.
+Then, in `about.<lang>.md`:
 
-## Adding a new language
+* set `lang: <lang>` in the front matter,
+* keep the same `permalink:`,
+* translate `title:` and `description:` — these become the localized `<title>`, meta
+  description and Open Graph tags,
+* translate the body (keep links and anchors such as `#for-users` intact).
+
+If a language has no file for a page, that language simply shows the English page.
+
+### Adding a brand-new language
 
 1. Add the language code to `languages:` in [`_config.yml`](_config.yml).
-2. Create `_data/i18n/<code>/ui.yml`. The quickest start is to copy
-   `_data/i18n/en/ui.yml` and translate the values (keep the keys).
-3. Optionally add `_data/i18n/<code>/licenses.yml` and
-   `_data/i18n/<code>/rules.yml` to translate the tier-2 content.
+2. Create `_data/i18n/<code>/ui.yml` (copy `_data/i18n/en/ui.yml` and translate the
+   values; keep the keys).
+3. Optionally add `_data/i18n/<code>/licenses.yml` and `_data/i18n/<code>/rules.yml`.
+4. Optionally add the per-language prose pages (`about.<code>.md`, `community.<code>.md`,
+   `no-permission.<code>.md`, `non-software.<code>.md`).
 
-That's it — the new language is built at `/<code>/…`, a selector entry appears, and
-the language is offered to matching browsers. Anything you didn't translate shows
-in English.
+So a new language is **one line in `_config.yml` + 1–3 small YAML files + one Markdown
+file per prose page you choose to translate** — and anything you skip falls back to
+English.
 
-### Keys
+### Keys (YAML)
 
-* `ui.yml` keys are flat. Keys ending in `_html` contain raw HTML; everything else
-  is Markdown. Keep links and anchors (e.g. `#for-users`) intact.
-* Placeholders like `%title%`, `%projects%`, `%license%`, `%language%` are
-  filled in by the site — keep them.
+* `ui.yml` keys are flat. Keys ending in `_html` contain raw HTML; everything else is
+  Markdown. Keep links and anchors (e.g. `#for-users`) intact.
+* Placeholders like `%title%`, `%projects%`, `%license%`, `%language%` are filled in by
+  the site — keep them.
 * `licenses.yml` is keyed by the lowercased SPDX id (e.g. `mit`, `gpl-3.0`).
 * `rules.yml` mirrors `_data/rules.yml`: `<group>` → `<tag>` → `{ label, description }`.
 
-A lightweight test (`spec/i18n_spec.rb`) checks that translations only use keys
-that exist in English and that license/rule ids are valid. It does **not** require
+A lightweight test (`spec/i18n_spec.rb`) checks that translations only use keys that
+exist in English and that license/rule ids are valid. It does **not** require
 translations to be complete.
 
-## Translating with Weblate
+## Community translation with Weblate
 
-The files above are plain monolingual YAML, which Weblate handles natively. A
-typical component setup:
-
-* **File format:** YAML
-* **Monolingual base language file:** `_data/i18n/en/ui.yml`
-* **File mask:** `_data/i18n/*/ui.yml`
-* **Template for new translations:** `_data/i18n/en/ui.yml`
-
-Add separate components for `rules.yml` (base `_data/rules.yml` is a different
-shape, so use a `<lang>/rules.yml` mask with English context) and, for tier-2
-contributors, `licenses.yml`. Weblate then opens pull requests against this
-repository; maintainers just review and merge — no extra build steps.
+The YAML tiers are ready for community translation via Weblate, and the per-language
+Markdown pages are translated as files. See **[WEBLATE.md](WEBLATE.md)** for the
+component setup, how source updates are detected and pulled, when to open a pull
+request, and how to add a language on the Weblate side.
 
 ## Notes for template authors (polyglot gotchas)
 
 If you edit the templates that build the multilingual links, two non-obvious
-[polyglot](https://github.com/untra/polyglot) behaviours can bite — both are
-already handled in the codebase, so just don't undo them:
+[polyglot](https://github.com/untra/polyglot) behaviours can bite — both are already
+handled in the codebase, so just don't undo them:
 
 * **Placeholders use `%name%`, not `%{name}`.** They're substituted with Liquid's
   `replace` filter (e.g. `{{ s | replace: '%title%', license.title }}`). A `}` in a
