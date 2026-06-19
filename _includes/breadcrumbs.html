@@ -5,9 +5,9 @@
   <ol>
     <li>
       {% if page.layout == "license" %}
-        <a href="/">{{ bc_home }}</a> / <a href="/licenses/">{{ bc_licenses }}</a>
+        <a href="{{ '/' | relative_url }}">{{ bc_home }}</a> / <a href="{{ '/licenses/' | relative_url }}">{{ bc_licenses }}</a>
       {% else %}
-        <a href="/">{{ bc_home }}</a>
+        <a href="{{ '/' | relative_url }}">{{ bc_home }}</a>
       {% endif %}
     </li>
   </ol>
