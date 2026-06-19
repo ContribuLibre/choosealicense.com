@@ -76,27 +76,27 @@ page_title_404: "404 未找到"
 # --- 首页 --------------------------------------------------------------------
 home_intro: |-
   开源许可证保护着贡献者和用户。没有这层保护，企业和资深开发者都不会碰你的项目。
-home_situation_q: "以下哪一项最能描述你的情况？"
-home_community_h3: "我需要在一个社区中工作。"
-home_community_p1: |-
+home_situations_question: "以下哪一项最能描述你的情况？"
+home_community_title: "我需要在一个社区中工作。"
+home_community_content: |-
   使用你所贡献或所依赖的[社区偏好的许可证](community/)，你的项目就能完美融入其中。
-home_community_p2: |-
+
   如果你的某个依赖没有许可证，请请求其维护者[添加一个许可证](no-permission/#for-users)。
-home_permissive_h3: "我想要简单而宽松的许可证。"
-home_permissive_p1: |-
+home_permissive_title: "我想要简单而宽松的许可证。"
+home_permissive_content: |-
   [MIT 许可证](licenses/mit/)简短而直接。它允许人们对你的项目做几乎任何想做的事，比如制作并发布闭源版本。
-home_copyleft_h3: "我在意改进成果能被共享。"
-home_copyleft_p1: |-
+home_copyleft_title: "我在意改进成果能被共享。"
+home_copyleft_content: |-
   [GNU GPLv3](licenses/gpl-3.0/) 同样允许人们对你的项目做几乎任何想做的事，*但唯独不能*发布闭源版本。
-home_more_q: "如果这些都不适合我怎么办？"
-home_nonsoftware_h3: "我的项目不是软件。"
-home_nonsoftware_p: |-
+home_more_question: "如果这些都不适合我怎么办？"
+home_nonsoftware_title: "我的项目不是软件。"
+home_nonsoftware_content: |-
   [有适用于这种情况的许可证](non-software/)。
-home_morechoices_h3: "我想要更多选择。"
-home_morechoices_p: |-
+home_morechoices_title: "我想要更多选择。"
+home_morechoices_content: |-
   [还有更多许可证可供选用](licenses/)。
-home_nolicense_h3: "我不想选择任何许可证。"
-home_nolicense_p: |-
+home_nolicense_title: "我不想选择任何许可证。"
+home_nolicense_content: |-
   [看看不选会发生什么](no-permission/)。
 
 # --- 许可证页面（/licenses/）------------------------------------------------

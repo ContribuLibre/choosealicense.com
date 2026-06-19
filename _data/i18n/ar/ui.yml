@@ -78,27 +78,27 @@ page_title_404: "404 الصفحة غير موجودة"
 # --- الصفحة الرئيسية ----------------------------------------------------------
 home_intro: |-
   يحمي الترخيص مفتوح المصدر المساهمين والمستخدمين. ولن تقترب الشركات والمطوّرون المتمرّسون من مشروع يفتقر إلى هذه الحماية.
-home_situation_q: "أيٌّ مما يلي يصف وضعك على أفضل وجه؟"
-home_community_h3: "أحتاج إلى العمل ضمن مجتمع."
-home_community_p1: |-
+home_situations_question: "أيٌّ مما يلي يصف وضعك على أفضل وجه؟"
+home_community_title: "أحتاج إلى العمل ضمن مجتمع."
+home_community_content: |-
   استخدم [الترخيص الذي يفضّله المجتمع](community/) الذي تساهم فيه أو تعتمد عليه. سيندمج مشروعك معه تمامًا.
-home_community_p2: |-
+
   إذا كانت لديك تبعية بلا ترخيص، فاطلب من القائمين عليها [إضافة ترخيص](no-permission/#for-users).
-home_permissive_h3: "أريده بسيطًا ومتساهلًا."
-home_permissive_p1: |-
+home_permissive_title: "أريده بسيطًا ومتساهلًا."
+home_permissive_content: |-
   [ترخيص MIT](licenses/mit/) قصير ومباشر. يتيح للناس فعل أي شيء تقريبًا بمشروعك، مثل إنشاء نسخ مغلقة المصدر وتوزيعها.
-home_copyleft_h3: "يهمّني مشاركة التحسينات."
-home_copyleft_p1: |-
+home_copyleft_title: "يهمّني مشاركة التحسينات."
+home_copyleft_content: |-
   يتيح [GNU GPLv3](licenses/gpl-3.0/) أيضًا للناس فعل أي شيء تقريبًا بمشروعك، *باستثناء* توزيع نسخ مغلقة المصدر.
-home_more_q: "ماذا لو لم يناسبني أيٌّ من هذه الخيارات؟"
-home_nonsoftware_h3: "مشروعي ليس برمجيات."
-home_nonsoftware_p: |-
+home_more_question: "ماذا لو لم يناسبني أيٌّ من هذه الخيارات؟"
+home_nonsoftware_title: "مشروعي ليس برمجيات."
+home_nonsoftware_content: |-
   [توجد تراخيص لذلك](non-software/).
-home_morechoices_h3: "أريد المزيد من الخيارات."
-home_morechoices_p: |-
+home_morechoices_title: "أريد المزيد من الخيارات."
+home_morechoices_content: |-
   [تتوفر تراخيص أخرى](licenses/).
-home_nolicense_h3: "لا أريد اختيار ترخيص."
-home_nolicense_p: |-
+home_nolicense_title: "لا أريد اختيار ترخيص."
+home_nolicense_content: |-
   [إليك ما يحدث إن لم تفعل](no-permission/).
 
 # --- صفحة التراخيص (/licenses/) ----------------------------------------------

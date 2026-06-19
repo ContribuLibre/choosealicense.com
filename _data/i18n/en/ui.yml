@@ -84,27 +84,27 @@ page_title_404: "404 Not Found"
 # --- Home page ---------------------------------------------------------------
 home_intro: |-
   An open source license protects contributors and users. Businesses and savvy developers won’t touch a project without this protection.
-home_situation_q: "Which of the following best describes your situation?"
-home_community_h3: "I need to work in a community."
-home_community_p1: |-
+home_situations_question: "Which of the following best describes your situation?"
+home_community_title: "I need to work in a community."
+home_community_content: |-
   Use the [license preferred by the community](community/) you’re contributing to or depending on. Your project will fit right in.
-home_community_p2: |-
+
   If you have a dependency that doesn’t have a license, ask its maintainers to [add a license](no-permission/#for-users).
-home_permissive_h3: "I want it simple and permissive."
-home_permissive_p1: |-
+home_permissive_title: "I want it simple and permissive."
+home_permissive_content: |-
   The [MIT License](licenses/mit/) is short and to the point. It lets people do almost anything they want with your project, like making and distributing closed source versions.
-home_copyleft_h3: "I care about sharing improvements."
-home_copyleft_p1: |-
+home_copyleft_title: "I care about sharing improvements."
+home_copyleft_content: |-
   The [GNU GPLv3](licenses/gpl-3.0/) also lets people do almost anything they want with your project, *except* distributing closed source versions.
-home_more_q: "What if none of these work for me?"
-home_nonsoftware_h3: "My project isn’t software."
-home_nonsoftware_p: |-
+home_more_question: "What if none of these work for me?"
+home_nonsoftware_title: "My project isn’t software."
+home_nonsoftware_content: |-
   [There are licenses for that](non-software/).
-home_morechoices_h3: "I want more choices."
-home_morechoices_p: |-
+home_morechoices_title: "I want more choices."
+home_morechoices_content: |-
   [More licenses are available](licenses/).
-home_nolicense_h3: "I don’t want to choose a license."
-home_nolicense_p: |-
+home_nolicense_title: "I don’t want to choose a license."
+home_nolicense_content: |-
   [Here’s what happens if you don’t](no-permission/).
 
 # --- Licenses page (/licenses/) ---------------------------------------------

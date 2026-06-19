@@ -78,27 +78,27 @@ page_title_404: "404 — Página não encontrada"
 # --- Página inicial ----------------------------------------------------------
 home_intro: |-
   Uma licença de código aberto protege quem contribui e quem usa. Empresas e pessoas desenvolvedoras experientes não chegam perto de um projeto sem essa proteção.
-home_situation_q: "Qual das opções a seguir descreve melhor a sua situação?"
-home_community_h3: "Preciso trabalhar em uma comunidade."
-home_community_p1: |-
+home_situations_question: "Qual das opções a seguir descreve melhor a sua situação?"
+home_community_title: "Preciso trabalhar em uma comunidade."
+home_community_content: |-
   Use a [licença preferida pela comunidade](community/) para a qual você está contribuindo ou da qual você depende. Seu projeto se encaixará perfeitamente.
-home_community_p2: |-
+
   Se você tiver uma dependência sem licença, peça a quem a mantém para [adicionar uma licença](no-permission/#for-users).
-home_permissive_h3: "Quero algo simples e permissivo."
-home_permissive_p1: |-
+home_permissive_title: "Quero algo simples e permissivo."
+home_permissive_content: |-
   A [Licença MIT](licenses/mit/) é curta e direta. Ela permite que as pessoas façam quase tudo o que quiserem com o seu projeto, como criar e distribuir versões de código fechado.
-home_copyleft_h3: "Importo-me em compartilhar melhorias."
-home_copyleft_p1: |-
+home_copyleft_title: "Importo-me em compartilhar melhorias."
+home_copyleft_content: |-
   A [GNU GPLv3](licenses/gpl-3.0/) também permite que as pessoas façam quase tudo o que quiserem com o seu projeto, *exceto* distribuir versões de código fechado.
-home_more_q: "E se nenhuma dessas opções servir para mim?"
-home_nonsoftware_h3: "Meu projeto não é software."
-home_nonsoftware_p: |-
+home_more_question: "E se nenhuma dessas opções servir para mim?"
+home_nonsoftware_title: "Meu projeto não é software."
+home_nonsoftware_content: |-
   [Existem licenças para isso](non-software/).
-home_morechoices_h3: "Quero mais opções."
-home_morechoices_p: |-
+home_morechoices_title: "Quero mais opções."
+home_morechoices_content: |-
   [Há mais licenças disponíveis](licenses/).
-home_nolicense_h3: "Não quero escolher uma licença."
-home_nolicense_p: |-
+home_nolicense_title: "Não quero escolher uma licença."
+home_nolicense_content: |-
   [Veja o que acontece se você não escolher](no-permission/).
 
 # --- Página de licenças (/licenses/) -----------------------------------------
