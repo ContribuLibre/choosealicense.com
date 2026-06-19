@@ -15,6 +15,10 @@ task :test do
   HTMLProofer.check_directory('./_site',
                               check_html: true,
                               enforce_https: true,
+                              # Demo-only: don't fail on transient external errors (5xx/timeouts,
+                              # e.g. GNU Savannah or joinup.ec.europa.eu rate-limiting CI); real
+                              # broken links (4xx) still fail. Not in the PR branch.
+                              only_4xx: true,
                               validation: { ignore_script_embeds: true },
                               url_swap: { %r{https://choosealicense\.com} => '',
                                           %r{https://contribulibre\.github\.io} => '' },
