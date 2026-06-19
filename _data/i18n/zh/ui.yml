@@ -106,9 +106,9 @@ licenses_outro_html: |-
   如果你已经心中有数，并且有偏好使用的许可证，那很好！我们无意改变你的想法。但如果你被众多的选择弄得不知所措，也许我们能帮上忙。
 
 # --- 附录（/appendix/）------------------------------------------------------
-appendix_intro_p1: |-
+appendix_intro: |-
   以下是 [choosealicense.com 仓库](https://github.com/github/choosealicense.com)中描述的所有许可证的表格，供参考。
-appendix_intro_p2: |-
+
   如果你来这里是为了选择许可证，**[请从首页开始](/)**，了解几个适用于大多数情况的许可证。
 appendix_col_license: "许可证"
 appendix_legend_heading: "图例"

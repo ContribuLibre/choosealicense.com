@@ -6,9 +6,7 @@ title_key: page_title_appendix
 class: license-types
 ---
 
-{% include t.html key="appendix_intro_p1" %}
-
-{% include t.html key="appendix_intro_p2" %}
+{% include t.html key="appendix_intro" %}
 
 {% assign i18n_lang = site.active_lang | default: site.default_lang %}
 {% assign loc_rules = site.data.i18n[i18n_lang].rules %}

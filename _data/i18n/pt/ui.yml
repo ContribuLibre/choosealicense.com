@@ -108,9 +108,9 @@ licenses_outro_html: |-
   Se você já sabe o que está fazendo e tem uma licença que prefere usar, ótimo! Não estamos aqui para fazer você mudar de ideia. Mas se o grande número de opções deixa você confuso, talvez possamos ajudar.
 
 # --- Apêndice (/appendix/) ---------------------------------------------------
-appendix_intro_p1: |-
+appendix_intro: |-
   Para referência, aqui está uma tabela com todas as licenças descritas no [repositório do choosealicense.com](https://github.com/github/choosealicense.com).
-appendix_intro_p2: |-
+
   Se você está aqui para escolher uma licença, **[comece pela página inicial](/)** para ver algumas licenças que servirão para a maioria dos casos.
 appendix_col_license: "Licença"
 appendix_legend_heading: "Legenda"
